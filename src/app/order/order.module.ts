@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import * as fromOrder from './reducers/order.reducer';
+import * as fromOrder from './store/reducers/order.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { OrderEffects } from './effects/order.effects';
+import { OrderEffects } from './store/effects/order.effects';
 
 
 

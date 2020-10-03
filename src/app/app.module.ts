@@ -10,6 +10,8 @@ import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {environment} from '../environments/environment';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {LayoutModule} from './layout/layout.module';
+import {OrderModule} from './order/order.module';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,11 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    LayoutModule,
     UserModule,
     ProductModule,
     CartModule,
+    OrderModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
