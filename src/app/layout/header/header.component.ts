@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'pps-header',
@@ -8,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
   lang = 'CN';
 
-  constructor() {
+  constructor(private translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -16,5 +17,6 @@ export class HeaderComponent implements OnInit {
 
   setLang(lang: string): void {
     this.lang = lang;
+    this.translate.use(lang);
   }
 }

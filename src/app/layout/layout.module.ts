@@ -4,6 +4,7 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {HomeComponent} from './home/home.component';
 import {ShareModule} from '../share/share.module';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {ShareModule} from '../share/share.module';
   ],
   imports: [
     CommonModule,
-    ShareModule
+    ShareModule,
+    TranslateModule
   ]
 })
 export class LayoutModule {

@@ -13,6 +13,8 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {LayoutModule} from './layout/layout.module';
 import {OrderModule} from './order/order.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {TranslationModule} from './translation/translation.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    TranslationModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
     LayoutModule,
     UserModule,
     ProductModule,
