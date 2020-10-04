@@ -12,6 +12,7 @@ import {environment} from '../environments/environment';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {LayoutModule} from './layout/layout.module';
 import {OrderModule} from './order/order.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {OrderModule} from './order/order.module';
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

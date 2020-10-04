@@ -1,10 +1,19 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  <h2 class="my-0 mr-md-auto font-weight-normal">胖胖 Shop</h2>
+  <h2 class="my-0 font-weight-normal">胖胖 Shop</h2>
+  <button class="btn ml-2 mr-md-auto" mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>language</mat-icon>
+    Language
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="setLang('CN')" [ngStyle]="{'color' : lang==='CN' ? 'blue' : 'inherit' }">CN</button>
+    <button mat-menu-item (click)="setLang('DE')" [ngStyle]="{'color' : lang==='DE' ? 'blue' : 'inherit' }">DE</button>
+    <button mat-menu-item (click)="setLang('EN')" [ngStyle]="{'color' : lang==='EN' ? 'blue' : 'inherit' }">EN</button>
+  </mat-menu>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" routerLink="/home">商品</a>
     <a class="p-2 text-dark" href="#">服务</a>
     <a class="p-2 text-dark" href="#">咨询</a>
   </nav>
   <a class="btn btn-outline-primary" routerLink="/register">注册</a>
-  <a class="ml-2 btn btn-outline-primary" routerLink="/login">登入</a>
+  <a class="ml-2 btn btn-outline-primary mr-2" routerLink="/login">登入</a>
 </div>
