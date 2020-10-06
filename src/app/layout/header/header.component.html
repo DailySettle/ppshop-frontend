@@ -10,10 +10,10 @@
     <button mat-menu-item (click)="setLang('en')" [ngStyle]="{'color' : lang==='en' ? 'blue' : 'inherit' }">EN</button>
   </mat-menu>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" routerLink="/home">商品</a>
-    <a class="p-2 text-dark" href="#">服务</a>
-    <a class="p-2 text-dark" href="#">咨询</a>
+    <a class="p-2 text-dark" routerLink="/home">{{'header.link.product' | translate}}</a>
+    <a class="p-2 text-dark" href="#">{{'header.link.service' | translate}}</a>
+    <a class="p-2 text-dark" href="#">{{'header.link.consult' | translate}}</a>
   </nav>
-  <a class="btn btn-outline-primary" routerLink="/register">注册</a>
-  <a class="ml-2 btn btn-outline-primary mr-2" routerLink="/login">登入</a>
+  <a class="btn btn-outline-primary" routerLink="/register">{{'header.button.signup' | translate}}</a>
+  <a class="ml-2 btn btn-outline-primary mr-2" routerLink="/login">{{'header.button.login' | translate}}</a>
 </div>

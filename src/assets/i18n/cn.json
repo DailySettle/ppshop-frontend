@@ -1,5 +1,37 @@
 {
+	"footer": {
+		"aboutUs": {
+			"AGB": "AGB",
+			"Datenschutz": "Datenschutz",
+			"Impressum": "Impressum",
+			"aboutPangPang": "关注胖胖",
+			"contactUs": "联系我们",
+			"title": "关于我们"
+		},
+		"points": {
+			"collection": "积分规则",
+			"consumption": "积分兑换",
+			"title": "积分"
+		},
+		"specification": {
+			"delivery": "配送规则",
+			"deliveryCost": "配送费用",
+			"guarantee": "质保",
+			"payment": "支付说明",
+			"refund": "退货说明",
+			"title": "规则说明"
+		}
+	},
 	"header": {
+		"button": {
+			"login": "登录",
+			"signup": "注册"
+		},
+		"link": {
+			"consult": "咨询",
+			"product": "商品",
+			"service": "服务"
+		},
 		"logo": "胖胖-网店"
 	}
 }

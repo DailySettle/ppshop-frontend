@@ -1,5 +1,37 @@
 {
+	"footer": {
+		"aboutUs": {
+			"AGB": "AGB",
+			"Datenschutz": "Datenschutz",
+			"Impressum": "Impressum",
+			"aboutPangPang": "Über Pangpang",
+			"contactUs": "Kontakt uns",
+			"title": "Über uns"
+		},
+		"points": {
+			"collection": "Pointssammelung",
+			"consumption": "Pointskonsumtion",
+			"title": "Points"
+		},
+		"specification": {
+			"delivery": "Versand",
+			"deliveryCost": "Versandkosten",
+			"guarantee": "Guarantee",
+			"payment": "Zahlung",
+			"refund": "Rückerstattung",
+			"title": "Spezifikation"
+		}
+	},
 	"header": {
+		"button": {
+			"login": "Anmelden",
+			"signup": "Ein Konto erstellen"
+		},
+		"link": {
+			"consult": "Consult",
+			"product": "Produkt",
+			"service": "Service"
+		},
 		"logo": "PangPang Online-Shop"
 	}
 }
