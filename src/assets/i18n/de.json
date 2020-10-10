@@ -33,5 +33,10 @@
 			"service": "Service"
 		},
 		"logo": "PangPang Online-Shop"
+	},
+	"toolbar": {
+		"cart": "Warenkorb",
+		"category": "Kategorien",
+		"wishlist": "Wunschliste"
 	}
 }

@@ -33,5 +33,10 @@
 			"service": "Service"
 		},
 		"logo": "Pangpang Online-shop"
+	},
+	"toolbar": {
+		"cart": "Shopping-cart",
+		"category": "Category",
+		"wishlist": "Wishlist"
 	}
 }

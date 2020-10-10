@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <span class="cursor" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+    <i class="fas fa-bars fa-2x"></i>{{'toolbar.category' |translate}}
+  </span>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Category A</button>
+    <button mat-menu-item>Category B</button>
+    <button mat-menu-item>Category C</button>
+    <button mat-menu-item>Category D</button>
+    <button mat-menu-item>Category E</button>
+  </mat-menu>
+  <span class="example-spacer"></span>
+  <span mat-icon-button class="pr-3" aria-label="Example icon-button with favorite icon">
+    {{'toolbar.wishlist' |translate}}
+    <mat-icon matBadge="3" matBadgeColor="warn">favorite</mat-icon>
+  </span>
+  <span mat-icon-button class="pr-3" aria-label="Example icon-button with shopping_cart icon">
+    {{'toolbar.cart' |translate}}
+    <mat-icon matBadge="1" matBadgeColor="warn">shopping_cart</mat-icon>
+  </span>
+</mat-toolbar>

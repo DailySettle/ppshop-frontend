@@ -33,5 +33,10 @@
 			"service": "服务"
 		},
 		"logo": "胖胖-网店"
+	},
+	"toolbar": {
+		"cart": "购物车",
+		"category": "目录",
+		"wishlist": "愿望单"
 	}
 }

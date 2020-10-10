@@ -3,12 +3,16 @@ import {CommonModule} from '@angular/common';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 const share = [
   MatButtonModule,
   MatIconModule,
-  MatMenuModule
+  MatMenuModule,
+  MatToolbarModule,
+  MatBadgeModule
 ];
 
 @NgModule({
