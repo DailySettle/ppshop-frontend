@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "app": {
+        "project": "ppshop-frontend",
+        "target": "build",
+        "configuration": "production",
+        "path": "dist/ppshop-frontend"
+      },
+      "azureHosting": {
+        "subscription": "6c7e91bb-9878-4139-ac5c-8d8c7827e8d1",
+        "resourceGroupName": "ppshop-frontend-static-deploy",
+        "account": "ppshopfrontendstatic"
+      }
+    }
+  ]
+}
