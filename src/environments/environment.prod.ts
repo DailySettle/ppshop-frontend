@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
   language: 'cn',
-  SERVER_URL: 'http://localhost:8080'
+  SERVER_URL: 'http://localhost:8080',
+  i18n: './ppshop-frontend/assets/i18n/'
 };

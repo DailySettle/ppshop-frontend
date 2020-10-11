@@ -6,7 +6,8 @@ import {environment} from '../../environments/environment';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http, './assets/i18n/');
+  const i18nPrefix = environment.i18n;
+  return new TranslateHttpLoader(http, i18nPrefix, '.json');
 }
 
 @NgModule({
