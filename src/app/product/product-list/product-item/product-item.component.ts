@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from '../../model/product.model';
+import {Store} from '@ngrx/store';
+import {addToCarts} from '../../../cart/store/actions/cart.actions';
 
 @Component({
   selector: 'pps-product-item',
@@ -11,14 +13,14 @@ export class ProductItemComponent implements OnInit {
   productItem: Product;
   addedToWishlist = false;
 
-  constructor() {
+  constructor(private store: Store) {
   }
 
   ngOnInit(): void {
   }
 
   handleAddToCart(): void {
-    // this.cartService.addToCart(this.productItem);
+    this.store.dispatch(addToCarts({product: this.productItem}));
   }
 
   handleRemoveFromWishlist(): void {

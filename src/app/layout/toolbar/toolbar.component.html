@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <span class="cursor" (click)="toggleSidebar()" aria-label="Example icon-button with menu icon">
+  <span class="cursor" aria-label="Example icon-button with menu icon">
     <i class="fas fa-bars pl-1 pr-3"></i>{{'toolbar.category' |translate}}
   </span>
   <span class="cursor" aria-label="Example icon-button with menu icon">
@@ -12,6 +12,6 @@
   </span>
   <span class="cursor pr-3" aria-label="Example icon-button with shopping_cart icon">
     {{'toolbar.cart' |translate}}
-    <mat-icon matBadge="1" matBadgeColor="warn">shopping_cart</mat-icon>
+    <mat-icon [matBadge]="numberOfItemsInCart | async" matBadgeColor="warn">shopping_cart</mat-icon>
   </span>
 </mat-toolbar>

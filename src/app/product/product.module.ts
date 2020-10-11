@@ -7,6 +7,7 @@ import { ProductEffects } from './store/effects/product.effects';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductItemComponent } from './product-list/product-item/product-item.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import {TranslationModule} from '../translation/translation.module';
 
 
 
@@ -15,10 +16,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     exports: [
         ProductListComponent
     ],
-    imports: [
-        CommonModule,
-        StoreModule.forFeature(fromProduct.productFeatureKey, fromProduct.reducer),
-        EffectsModule.forFeature([ProductEffects])
-    ]
+  imports: [
+    CommonModule,
+    StoreModule.forFeature(fromProduct.productFeatureKey, fromProduct.reducer),
+    EffectsModule.forFeature([ProductEffects]),
+    TranslationModule
+  ]
 })
 export class ProductModule { }
