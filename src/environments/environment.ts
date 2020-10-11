@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  language: 'cn'
+  language: 'cn',
+  SERVER_URL: 'http://localhost:8080'
 };
 
 /*

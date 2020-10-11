@@ -1,1 +1,5 @@
-<p>product-list works!</p>
+<div class="row">
+  <div class="col-md-3" *ngFor="let product of productList |async">
+    <pps-product-item [productItem]="product"></pps-product-item>
+  </div>
+</div>

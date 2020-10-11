@@ -1,1 +1,18 @@
-<p>product-item works!</p>
+<div class="card mb-4 shadow-sm">
+  <span>{{productItem.name}}</span>
+  <img class="bd-placeholder-img card-img-top" width="100%" alt="product-image"
+       [src]="productItem.imageUrl">
+  <div class="card-body">
+    <p class="card-text"><strong>{{ productItem.price | currency: 'EUR'}}</strong>
+      <i *ngIf="addedToWishlist" class="fas fa-heart float-right" (click)="handleRemoveFromWishlist()"></i>
+      <i *ngIf="!addedToWishlist" class="far fa-heart float-right" (click)="handleAddToWishlist()"></i></p>
+    <p class="card-text">{{productItem.description}}</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">加入购物车</button>
+        <button type="button" class="btn btn-sm btn-secondary product-btn">查看详情</button>
+      </div>
+      <span>数量：{{4}}</span>
+    </div>
+  </div>
+</div>

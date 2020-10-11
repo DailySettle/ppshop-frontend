@@ -4,27 +4,24 @@ import { catchError, map, concatMap } from 'rxjs/operators';
 import { EMPTY, of } from 'rxjs';
 
 import * as ProductActions from '../actions/product.actions';
+import {HttpService} from '../../../services/http.service';
 
 
 
 @Injectable()
 export class ProductEffects {
 
-  loadProducts$ = createEffect(() => {
-    return this.actions$.pipe( 
+  constructor(private actions$: Actions, private http: HttpService) {
+  }
 
-      ofType(ProductActions.loadProducts),
-      concatMap(() =>
-        /** An EMPTY observable only emits completion. Replace with your own observable API request */
-        EMPTY.pipe(
-          map(data => ProductActions.loadProductsSuccess({ data })),
-          catchError(error => of(ProductActions.loadProductsFailure({ error }))))
+  loadProducts$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ProductActions.loadAllProducts),
+      concatMap(() => this.http.getAllProducts().pipe(
+        map(payload => ProductActions.loadAllProductsSuccess({payload})),
+        catchError(error => of(ProductActions.loadAllProductsFailure({errorMessage: error.error}))))
       )
     );
   });
-
-
-
-  constructor(private actions$: Actions) {}
 
 }

@@ -6,18 +6,18 @@ export const productFeatureKey = 'product';
 
 export interface ProductState {
   products: Product[];
+  errorMessage: string | null;
 }
 
 export const initialState: ProductState = {
-  products: []
+  products: [],
+  errorMessage: null
 };
 
 
 export const reducer = createReducer(
   initialState,
 
-  on(ProductActions.loadProducts, state => state),
-  on(ProductActions.loadProductsSuccess, (state, action) => state),
-  on(ProductActions.loadProductsFailure, (state, action) => state),
+  on(ProductActions.loadAllProductsSuccess, (state, action) => ({...state, products: action.payload})),
+  on(ProductActions.loadAllProductsFailure, (state, action) => ({...state, errorMessage: action.errorMessage})),
 );
-
