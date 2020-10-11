@@ -8,15 +8,17 @@ import {TranslateModule} from '@ngx-translate/core';
 import {ProductModule} from '../product/product.module';
 import {CartModule} from '../cart/cart.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { NavSidebarComponent } from './nav-sidebar/nav-sidebar.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, HomeComponent, ToolbarComponent],
+  declarations: [HeaderComponent, FooterComponent, HomeComponent, ToolbarComponent, NavSidebarComponent],
   exports: [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    NavSidebarComponent
   ],
   imports: [
     CommonModule,

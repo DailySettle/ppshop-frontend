@@ -34,9 +34,17 @@
 		},
 		"logo": "Pangpang Online-shop"
 	},
+	"sidebar": {
+		"baby-products": "Baby products",
+		"fastfood": "Fastfood",
+		"freshfood": "Freshfood",
+		"toy": "Toy",
+		"veges": "Vegetables"
+	},
 	"toolbar": {
 		"cart": "Shopping-cart",
 		"category": "Category",
+		"sale": "On sale",
 		"wishlist": "Wishlist"
 	}
 }

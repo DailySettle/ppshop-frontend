@@ -34,9 +34,17 @@
 		},
 		"logo": "胖胖-网店"
 	},
+	"sidebar": {
+		"baby-products": "幼婴产品",
+		"fastfood": "快食",
+		"freshfood": "生鲜",
+		"toy": "玩具",
+		"veges": "蔬菜"
+	},
 	"toolbar": {
 		"cart": "购物车",
-		"category": "目录",
+		"category": "主要商品",
+		"sale": "限时特卖",
 		"wishlist": "愿望单"
 	}
 }

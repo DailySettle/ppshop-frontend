@@ -34,9 +34,17 @@
 		},
 		"logo": "PangPang Online-Shop"
 	},
+	"sidebar": {
+		"baby-products": "Babyprodukt",
+		"fastfood": "Fastfood",
+		"freshfood": "Freshfood",
+		"toy": "Spielzeug",
+		"veges": "Gemüse"
+	},
 	"toolbar": {
 		"cart": "Warenkorb",
 		"category": "Kategorien",
+		"sale": "Aktion",
 		"wishlist": "Wunschliste"
 	}
 }

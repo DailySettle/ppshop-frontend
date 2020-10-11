@@ -1,0 +1,62 @@
+.side-menu {
+  width: 60px;
+  background-color: #3f51b5;
+  position: fixed;
+  top: 71px + 64px;
+  left: 0;
+  z-index: 990;
+  height: 230px;
+  overflow: hidden;
+  transition: all 0.25s;
+
+  &:hover {
+    width: 200px;
+
+    .navbar-nav li {
+      &:hover {
+        font-weight: bold;
+        background-color: #006384;
+        cursor: pointer;
+      }
+
+      a {
+        padding-right: 40px;
+        color: white;
+
+        .title {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .navbar-nav li {
+
+    &.selected {
+      background-color: #005475;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    a {
+      padding: 0 10px 0 10px;
+      line-height: 46px;
+      white-space: nowrap;
+
+      .icon {
+        width: 38px;
+        text-align: center;
+        font-size: 1.3em;
+        color: white;
+        vertical-align: middle;
+      }
+
+      .title {
+        display: none;
+      }
+    }
+  }
+
+}
