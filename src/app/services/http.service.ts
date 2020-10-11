@@ -3,6 +3,7 @@ import {Product} from '../product/model/product.model';
 import {Observable, of} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
+import {CategoryType} from '../product/model/category-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,9 @@ export class HttpService {
   private BASE_URL = environment.SERVER_URL;
 
   private products: Product[] = [
-    new Product(1, 'Haribo 1', '', 'Haribo 小熊糖', 100, 1, 'https://assets.haribo.com/image/upload/s--YdeeyHhl--/ar_2700:3594,c_fill,f_auto/w_770/v1/de-de/Produktverpackungen/goldbaeren.png'),
-    new Product(1, 'Haribo 2', '', 'Haribo 小熊糖', 100, 1, 'https://assets.haribo.com/image/upload/s--YdeeyHhl--/ar_2700:3594,c_fill,f_auto/w_770/v1/de-de/Produktverpackungen/goldbaeren.png'),
-    new Product(1, 'Haribo 3', '', 'Haribo 小熊糖', 100, 1, 'https://assets.haribo.com/image/upload/s--YdeeyHhl--/ar_2700:3594,c_fill,f_auto/w_770/v1/de-de/Produktverpackungen/goldbaeren.png'),
-    new Product(1, 'Haribo 4', '', 'Haribo 小熊糖', 100, 1, 'https://assets.haribo.com/image/upload/s--YdeeyHhl--/ar_2700:3594,c_fill,f_auto/w_770/v1/de-de/Produktverpackungen/goldbaeren.png'),
-    new Product(1, 'Haribo 5', '', 'Haribo 小熊糖', 100, 1, 'https://assets.haribo.com/image/upload/s--YdeeyHhl--/ar_2700:3594,c_fill,f_auto/w_770/v1/de-de/Produktverpackungen/goldbaeren.png'),
-    new Product(1, 'Haribo 6', '', 'Haribo 小熊糖', 100, 1, 'https://assets.haribo.com/image/upload/s--YdeeyHhl--/ar_2700:3594,c_fill,f_auto/w_770/v1/de-de/Produktverpackungen/goldbaeren.png'),
-    new Product(1, 'Haribo 7', '', 'Haribo 小熊糖', 100, 1, 'https://assets.haribo.com/image/upload/s--YdeeyHhl--/ar_2700:3594,c_fill,f_auto/w_770/v1/de-de/Produktverpackungen/goldbaeren.png'),
+    new Product(1, 'Haribo Goldbären', CategoryType.SNACK, 'Haribo Goldbären', 1.00, 1, '/assets/image/products/haribo1.jpeg'),
+    new Product(2, 'Haribo Tropifrutti', CategoryType.SNACK, 'Haribo Tropifrutti', 1.00, 2, '/assets/image/products/haribo2.jpeg'),
+    new Product(3, 'Haribo Happy-Colo', CategoryType.SNACK, 'Haribo Happy-Colo', 1.00, 3, '/assets/image/products/haribo3.jpeg'),
   ];
 
   constructor(private httpClient: HttpClient) {
