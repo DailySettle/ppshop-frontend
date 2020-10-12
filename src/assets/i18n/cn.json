@@ -1,57 +1,80 @@
 {
-  "footer": {
-    "aboutUs": {
-      "AGB": "AGB",
-      "Datenschutz": "Datenschutz",
-      "Impressum": "Impressum",
-      "aboutPangPang": "关注胖胖",
-      "contactUs": "联系我们",
-      "title": "关于我们"
-    },
-    "points": {
-      "collection": "积分规则",
-      "consumption": "积分兑换",
-      "title": "积分"
-    },
-    "specification": {
-      "delivery": "配送规则",
-      "deliveryCost": "配送费用",
-      "guarantee": "质保",
-      "payment": "支付说明",
-      "refund": "退货说明",
-      "title": "规则说明"
-    }
-  },
-  "header": {
-    "button": {
-      "login": "登录",
-      "signup": "注册"
-    },
-    "link": {
-      "consult": "咨询",
-      "product": "商品",
-      "service": "服务"
-    },
-    "logo": "胖胖-网店"
-  },
-  "product": {
-    "item": {
-      "addToCart": "加入购物车",
-      "detail": "详情",
-      "quantity": "库存"
-    }
-  },
-  "sidebar": {
-    "baby-products": "幼婴产品",
-    "fastfood": "快食",
-    "freshfood": "生鲜",
-    "toy": "玩具",
-    "veges": "蔬菜"
-  },
-  "toolbar": {
-    "cart": "购物车",
-    "category": "主要商品",
-    "sale": "限时特卖",
-    "wishlist": "愿望单"
-  }
+	"dialog": {
+		"confirm": "确认密码",
+		"error": {
+			"mailbox": {
+				"invalid": "邮箱无效.",
+				"required": "请输入您的邮箱."
+			},
+			"password": {
+				"invalid": "密码无效.",
+				"unmatched": "请再次输入您的密码."
+			}
+		},
+		"login": {
+			"button": "登录",
+			"title": "请登录"
+		},
+		"mailbox": "邮箱",
+		"password": "密码",
+		"signup": {
+			"button": "注册",
+			"title": "请注册"
+		}
+	},
+	"footer": {
+		"aboutUs": {
+			"AGB": "AGB",
+			"Datenschutz": "Datenschutz",
+			"Impressum": "Impressum",
+			"aboutPangPang": "关注胖胖",
+			"contactUs": "联系我们",
+			"title": "关于我们"
+		},
+		"points": {
+			"collection": "积分规则",
+			"consumption": "积分兑换",
+			"title": "积分"
+		},
+		"specification": {
+			"delivery": "配送规则",
+			"deliveryCost": "配送费用",
+			"guarantee": "质保",
+			"payment": "支付说明",
+			"refund": "退货说明",
+			"title": "规则说明"
+		}
+	},
+	"header": {
+		"button": {
+			"login": "登录",
+			"signup": "注册"
+		},
+		"link": {
+			"consult": "咨询",
+			"product": "商品",
+			"service": "服务"
+		},
+		"logo": "胖胖-网店"
+	},
+	"product": {
+		"item": {
+			"addToCart": "加入购物车",
+			"detail": "详情",
+			"quantity": "库存"
+		}
+	},
+	"sidebar": {
+		"baby-products": "幼婴产品",
+		"fastfood": "快食",
+		"freshfood": "生鲜",
+		"toy": "玩具",
+		"veges": "蔬菜"
+	},
+	"toolbar": {
+		"cart": "购物车",
+		"category": "主要商品",
+		"sale": "限时特卖",
+		"wishlist": "愿望单"
+	}
 }

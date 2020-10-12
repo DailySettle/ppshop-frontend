@@ -1,4 +1,27 @@
 {
+	"dialog": {
+		"confirm": "Please confirm password",
+		"error": {
+			"mailbox": {
+				"invalid": "Invalid mailbox.",
+				"required": "Please enter your mailbox."
+			},
+			"password": {
+				"invalid": "Invalid password.",
+				"unmatched": "Please enter your password again."
+			}
+		},
+		"login": {
+			"button": "Login",
+			"title": "Please login"
+		},
+		"mailbox": "Email",
+		"password": "password",
+		"signup": {
+			"button": "Signup",
+			"title": "Please signup"
+		}
+	},
 	"footer": {
 		"aboutUs": {
 			"AGB": "AGB",

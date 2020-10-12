@@ -5,15 +5,21 @@
     Language
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="setLang('cn')" [ngStyle]="{'color' : lang==='cn' ? 'blue' : 'inherit' }">CN</button>
-    <button mat-menu-item (click)="setLang('de')" [ngStyle]="{'color' : lang==='de' ? 'blue' : 'inherit' }">DE</button>
-    <button mat-menu-item (click)="setLang('en')" [ngStyle]="{'color' : lang==='en' ? 'blue' : 'inherit' }">EN</button>
+    <button mat-menu-item (click)="setLang(Language.CN)"
+            [ngStyle]="{'color' : lang===Language.CN ? 'blue' : 'inherit' }">CN
+    </button>
+    <button mat-menu-item (click)="setLang(Language.DE)"
+            [ngStyle]="{'color' : lang===Language.DE ? 'blue' : 'inherit' }">DE
+    </button>
+    <button mat-menu-item (click)="setLang(Language.EN)"
+            [ngStyle]="{'color' : lang===Language.EN ? 'blue' : 'inherit' }">EN
+    </button>
   </mat-menu>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" routerLink="/home">{{'header.link.product' | translate}}</a>
     <a class="p-2 text-dark" href="#">{{'header.link.service' | translate}}</a>
     <a class="p-2 text-dark" href="#">{{'header.link.consult' | translate}}</a>
   </nav>
-  <a class="btn btn-outline-primary" routerLink="/register">{{'header.button.signup' | translate}}</a>
-  <a class="ml-2 btn btn-outline-primary mr-2" routerLink="/login">{{'header.button.login' | translate}}</a>
+  <a class="btn btn-outline-primary" (click)="openSignupDialog()">{{'header.button.signup' | translate}}</a>
+  <a class="ml-2 btn btn-outline-primary mr-2" (click)="openLoginDialog()">{{'header.button.login' | translate}}</a>
 </div>
