@@ -15,6 +15,7 @@ import {OrderModule} from './order/order.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {TranslationModule} from './translation/translation.module';
+import {WishlistModule} from './wishlist/wishlist.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {TranslationModule} from './translation/translation.module';
     ProductModule,
     CartModule,
     OrderModule,
+    WishlistModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],

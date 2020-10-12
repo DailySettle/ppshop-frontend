@@ -8,7 +8,7 @@
   <span class="example-spacer"></span>
   <span class="cursor pr-3" aria-label="Example icon-button with favorite icon">
     {{'toolbar.wishlist' |translate}}
-    <mat-icon matBadge="3" matBadgeColor="warn">favorite</mat-icon>
+    <mat-icon [matBadge]="numberOfItemsInWishlist | async" matBadgeColor="warn">favorite</mat-icon>
   </span>
   <span class="cursor pr-3" aria-label="Example icon-button with shopping_cart icon">
     {{'toolbar.cart' |translate}}
