@@ -8,16 +8,19 @@ import {SignupComponent} from './dialog/signup/signup.component';
 import {LoginComponent} from './dialog/login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TranslationModule} from '../translation/translation.module';
+import {ShareModule} from '../share/share.module';
+import { UserDialogComponent } from './dialog/user-dialog/user-dialog.component';
 
 
 @NgModule({
-  declarations: [SignupComponent, LoginComponent],
+  declarations: [SignupComponent, LoginComponent, UserDialogComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature(fromUser.userFeatureKey, fromUser.reducer),
     EffectsModule.forFeature([UserEffects]),
     ReactiveFormsModule,
-    TranslationModule
+    TranslationModule,
+    ShareModule
   ]
 })
 export class UserModule {

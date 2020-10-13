@@ -1,9 +1,6 @@
-<div class="text-center">
-  <h3>{{'dialog.signup.title' | translate}}</h3>
-</div>
-
+<div class="full-height">
 <form [formGroup]="signupForm" (ngSubmit)="register()">
-  <div class="form-group">
+  <div class="form-group pt-4">
     <label for="email">{{'dialog.mailbox' | translate}}</label>
     <input id="email"
            name="email"
@@ -35,8 +32,14 @@
     <span *ngIf="signupForm.get('confirmPassword').hasError('passwordsMatch')"
           class="invalid-feedback">{{'dialog.error.password.unmatched' | translate}}</span>
   </div>
-  <button class="btn btn-primary float-right"
-          type="submit"
-          [disabled]="signupForm.invalid">{{'dialog.signup.button' | translate}}
-  </button>
+
+
+  <mat-dialog-actions class="flex justify-content-around">
+    <button mat-raised-button color="accent" mat-dialog-close>{{'dialog.button.close' | translate}}</button>
+    <button mat-raised-button color="primary"
+            type="submit" cdkFocusInitial
+            [disabled]="signupForm.invalid">{{'dialog.signup.button' | translate}}
+    </button>
+  </mat-dialog-actions>
 </form>
+</div>

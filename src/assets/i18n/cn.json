@@ -1,5 +1,8 @@
 {
 	"dialog": {
+		"button": {
+			"close": "关闭"
+		},
 		"confirm": "确认密码",
 		"error": {
 			"mailbox": {

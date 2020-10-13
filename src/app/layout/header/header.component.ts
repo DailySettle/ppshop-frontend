@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {Language} from '../../translation/language.enum';
 import {MatDialog} from '@angular/material/dialog';
-import {SignupComponent} from '../../user/dialog/signup/signup.component';
-import {LoginComponent} from '../../user/dialog/login/login.component';
+import {UserDialogComponent} from '../../user/dialog/user-dialog/user-dialog.component';
 
 @Component({
   selector: 'pps-header',
@@ -26,7 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openSignupDialog(): void {
-    const dialogRef = this.dialog.open(SignupComponent, {
+    const dialogRef = this.dialog.open(UserDialogComponent, {
       width: '500px'
     });
 
@@ -36,7 +35,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openLoginDialog(): void {
-    const dialogRef = this.dialog.open(LoginComponent,
+    const dialogRef = this.dialog.open(UserDialogComponent,
       {
         width: '500px'
       });

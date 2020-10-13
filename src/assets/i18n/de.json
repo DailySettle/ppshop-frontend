@@ -1,80 +1,83 @@
 {
-	"dialog": {
-		"confirm": "Bestätigungspasswort",
-		"error": {
-			"mailbox": {
-				"invalid": "Ungütige Email",
-				"required": "Bitte geben Ihre Email ein."
-			},
-			"password": {
-				"invalid": "Ungütige passwort",
-				"unmatched": "Bitte geben Ihre Passwort ein."
-			}
-		},
-		"login": {
-			"button": "Einloggen",
-			"title": "Bitte Einloggen"
-		},
-		"mailbox": "Email",
-		"password": "Passwort",
-		"signup": {
-			"button": "Anmelden",
-			"title": "Bitte Anmelden"
-		}
-	},
-	"footer": {
-		"aboutUs": {
-			"AGB": "AGB",
-			"Datenschutz": "Datenschutz",
-			"Impressum": "Impressum",
-			"aboutPangPang": "Über Pangpang",
-			"contactUs": "Kontakt uns",
-			"title": "Über uns"
-		},
-		"points": {
-			"collection": "Pointssammelung",
-			"consumption": "Pointskonsumtion",
-			"title": "Points"
-		},
-		"specification": {
-			"delivery": "Versand",
-			"deliveryCost": "Versandkosten",
-			"guarantee": "Guarantee",
-			"payment": "Zahlung",
-			"refund": "Rückerstattung",
-			"title": "Spezifikation"
-		}
-	},
-	"header": {
-		"button": {
-			"login": "Anmelden",
-			"signup": "Ein Konto erstellen"
-		},
-		"link": {
-			"consult": "Consult",
-			"product": "Produkt",
-			"service": "Service"
-		},
-		"logo": "PangPang Online-Shop"
-	},
-	"product": {
-		"item": {
-			"addToCart": "In den Warenkorb",
-			"detail": "Detail",
-			"quantity": "Vorrat"
-		}
-	},
-	"sidebar": {
-		"baby-products": "Babyprodukt",
-		"fastfood": "Fastfood",
-		"freshfood": "Freshfood",
-		"toy": "Spielzeug",
-		"veges": "Gemüse"
-	},
-	"toolbar": {
-		"cart": "Warenkorb",
-		"category": "Kategorien",
-		"sale": "Aktion",
-		"wishlist": "Wunschliste"
-	}
+  "dialog": {
+    "button": {
+      "close": "Schließen"
+    },
+    "confirm": "Bestätigungspasswort",
+    "error": {
+      "mailbox": {
+        "invalid": "Ungütige Email",
+        "required": "Bitte geben Ihre Email ein."
+      },
+      "password": {
+        "invalid": "Ungütige passwort",
+        "unmatched": "Bitte geben Ihre Passwort ein."
+      }
+    },
+    "login": {
+      "button": "Einloggen",
+      "title": "Bitte Einloggen"
+    },
+    "mailbox": "Email",
+    "password": "Passwort",
+    "signup": {
+      "button": "Anmelden",
+      "title": "Bitte Anmelden"
+    }
+  },
+  "footer": {
+    "aboutUs": {
+      "AGB": "AGB",
+      "Datenschutz": "Datenschutz",
+      "Impressum": "Impressum",
+      "aboutPangPang": "Über Pangpang",
+      "contactUs": "Kontakt uns",
+      "title": "Über uns"
+    },
+    "points": {
+      "collection": "Pointssammelung",
+      "consumption": "Pointskonsumtion",
+      "title": "Points"
+    },
+    "specification": {
+      "delivery": "Versand",
+      "deliveryCost": "Versandkosten",
+      "guarantee": "Guarantee",
+      "payment": "Zahlung",
+      "refund": "Rückerstattung",
+      "title": "Spezifikation"
+    }
+  },
+  "header": {
+    "button": {
+      "login": "Anmelden",
+      "signup": "Ein Konto erstellen"
+    },
+    "link": {
+      "consult": "Consult",
+      "product": "Produkt",
+      "service": "Service"
+    },
+    "logo": "PangPang Online-Shop"
+  },
+  "product": {
+    "item": {
+      "addToCart": "In den Warenkorb",
+      "detail": "Detail",
+      "quantity": "Vorrat"
+    }
+  },
+  "sidebar": {
+    "baby-products": "Babyprodukt",
+    "fastfood": "Fastfood",
+    "freshfood": "Freshfood",
+    "toy": "Spielzeug",
+    "veges": "Gemüse"
+  },
+  "toolbar": {
+    "cart": "Warenkorb",
+    "category": "Kategorien",
+    "sale": "Aktion",
+    "wishlist": "Wunschliste"
+  }
 }

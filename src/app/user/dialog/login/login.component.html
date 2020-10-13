@@ -1,10 +1,6 @@
-<div class="text-center">
-  <h3>{{'dialog.login.title' | translate}}</h3>
-</div>
-
-<div class="card-body">
+<div class="full-height">
   <form [formGroup]="loginForm" (ngSubmit)="login()">
-    <div class="form-group">
+    <div class="form-group pt-4">
       <label for="username">{{'dialog.mailbox' | translate}}</label>
       <input id="username"
              name="username"
@@ -22,7 +18,12 @@
              [ngClass]="{'is-invalid': loginForm.get('password').touched && loginForm.get('password').invalid}">
       <span class="invalid-feedback">{{'dialog.error.password.invalid' | translate}}</span>
     </div>
-    <button class="btn btn-primary float-right"
-            [disabled]="loginForm.invalid">{{'dialog.login.button' | translate}}</button>
+
+    <mat-dialog-actions class="flex justify-content-around">
+      <button mat-raised-button color="accent" mat-dialog-close>{{'dialog.button.close' | translate}}</button>
+      <button mat-raised-button color="primary" cdkFocusInitial
+              [disabled]="loginForm.invalid">{{'dialog.login.button' | translate}}</button>
+    </mat-dialog-actions>
+
   </form>
 </div>

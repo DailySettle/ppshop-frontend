@@ -1,5 +1,8 @@
 {
 	"dialog": {
+		"button": {
+			"close": "Close"
+		},
 		"confirm": "Please confirm password",
 		"error": {
 			"mailbox": {
