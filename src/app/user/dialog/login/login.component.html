@@ -21,8 +21,9 @@
 
     <mat-dialog-actions class="flex justify-content-around">
       <button mat-raised-button color="accent" mat-dialog-close>{{'dialog.button.close' | translate}}</button>
-      <button mat-raised-button color="primary" cdkFocusInitial
-              [disabled]="loginForm.invalid">{{'dialog.login.button' | translate}}</button>
+      <button mat-raised-button color="primary"
+              type="submit" matTooltip="{{'dialog.login.tooltip' | translate}}">
+        {{'dialog.login.button' | translate}}</button>
     </mat-dialog-actions>
 
   </form>

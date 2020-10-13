@@ -16,13 +16,15 @@
 		},
 		"login": {
 			"button": "Login",
-			"title": "Please login"
+			"title": "Please login",
+			"tooltip": "Please enter your email and password."
 		},
 		"mailbox": "Email",
 		"password": "password",
 		"signup": {
 			"button": "Signup",
-			"title": "Please signup"
+			"title": "Please signup",
+			"tooltip": "Please enter your email and password."
 		}
 	},
 	"footer": {
@@ -50,8 +52,7 @@
 	},
 	"header": {
 		"button": {
-			"login": "Login",
-			"signup": "Signup"
+			"login": "Login"
 		},
 		"link": {
 			"consult": "Consult",

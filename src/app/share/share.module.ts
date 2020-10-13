@@ -7,6 +7,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 const share = [
@@ -16,7 +17,8 @@ const share = [
   MatToolbarModule,
   MatBadgeModule,
   MatDialogModule,
-  MatTabsModule
+  MatTabsModule,
+  MatTooltipModule
 ];
 
 @NgModule({

@@ -23,6 +23,7 @@ import {WishlistModule} from './wishlist/wishlist.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     TranslationModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
@@ -35,7 +36,6 @@ import {WishlistModule} from './wishlist/wishlist.module';
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

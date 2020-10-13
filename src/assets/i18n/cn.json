@@ -16,13 +16,15 @@
 		},
 		"login": {
 			"button": "登录",
-			"title": "请登录"
+			"title": "请登录",
+			"tooltip": "请输入邮箱和密码."
 		},
 		"mailbox": "邮箱",
 		"password": "密码",
 		"signup": {
 			"button": "注册",
-			"title": "请注册"
+			"title": "请注册",
+			"tooltip": "请输入邮箱和密码."
 		}
 	},
 	"footer": {
@@ -50,8 +52,7 @@
 	},
 	"header": {
 		"button": {
-			"login": "登录",
-			"signup": "注册"
+			"login": "登录"
 		},
 		"link": {
 			"consult": "咨询",

@@ -24,16 +24,6 @@ export class HeaderComponent implements OnInit {
     this.translate.use(lang.toLowerCase());
   }
 
-  openSignupDialog(): void {
-    const dialogRef = this.dialog.open(UserDialogComponent, {
-      width: '500px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
   openLoginDialog(): void {
     const dialogRef = this.dialog.open(UserDialogComponent,
       {
