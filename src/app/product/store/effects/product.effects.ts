@@ -18,7 +18,7 @@ export class ProductEffects {
     return this.actions$.pipe(
       ofType(ProductActions.loadAllProducts),
       concatMap(() => this.http.getAllProducts().pipe(
-        map(payload => ProductActions.loadAllProductsSuccess({payload})),
+        map(products => ProductActions.loadAllProductsSuccess({products})),
         catchError(error => of(ProductActions.loadAllProductsFailure({errorMessage: error.error}))))
       )
     );

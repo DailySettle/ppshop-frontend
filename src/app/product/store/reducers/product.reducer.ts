@@ -1,4 +1,4 @@
-import {Action, createReducer, on} from '@ngrx/store';
+import {createReducer, on} from '@ngrx/store';
 import * as ProductActions from '../actions/product.actions';
 import {Product} from '../../model/product.model';
 
@@ -18,6 +18,6 @@ export const initialState: ProductState = {
 export const reducer = createReducer(
   initialState,
 
-  on(ProductActions.loadAllProductsSuccess, (state, action) => ({...state, products: action.payload})),
-  on(ProductActions.loadAllProductsFailure, (state, action) => ({...state, errorMessage: action.errorMessage})),
+  on(ProductActions.loadAllProductsSuccess, (state, {products}) => ({...state, products})),
+  on(ProductActions.loadAllProductsFailure, (state, {errorMessage}) => ({...state, errorMessage})),
 );

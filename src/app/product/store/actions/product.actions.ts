@@ -2,15 +2,15 @@ import { createAction, props } from '@ngrx/store';
 import {Product} from '../../model/product.model';
 
 export const loadAllProducts = createAction(
-  '[ProductModel] Load Products'
+  '[Product] Load Products'
 );
 
 export const loadAllProductsSuccess = createAction(
-  '[ProductModel] Load Products Success',
-  props<{ payload: Product[] }>()
+  '[Product] Load Products Success',
+  props<{ products: Product[] }>()
 );
 
 export const loadAllProductsFailure = createAction(
-  '[ProductModel] Load Products Failure',
+  '[Product] Load Products Failure',
   props<{ errorMessage: string }>()
 );
