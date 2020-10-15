@@ -61,6 +61,12 @@
 		},
 		"logo": "PangPang Online-Shop"
 	},
+	"message": {
+		"login": {
+			"failure": "Leider können Sie nicht einloggen！",
+			"success": "Erfolgreich eingeloggt！"
+		}
+	},
 	"product": {
 		"item": {
 			"addToCart": "In den Warenkorb",

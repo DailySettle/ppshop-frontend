@@ -61,6 +61,12 @@
 		},
 		"logo": "Pangpang Online-shop"
 	},
+	"message": {
+		"login": {
+			"failure": "You aren't able to login",
+			"success": "Login successfully"
+		}
+	},
 	"product": {
 		"item": {
 			"addToCart": "Add to cart",
