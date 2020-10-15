@@ -17,9 +17,6 @@ export const initialState: WishlistState = {
 export const reducer = createReducer(
   initialState,
 
-  on(WishActions.loadWishs, state => state),
-  on(WishActions.loadWishsSuccess, (state, action) => state),
-  on(WishActions.loadWishsFailure, (state, action) => state),
   on(WishActions.addToWishlist, (state, {product}) => {
     const newList = _.cloneDeep(state.wishlist);
     if (newList.find(productInWishlist => productInWishlist.id === product.id)) {

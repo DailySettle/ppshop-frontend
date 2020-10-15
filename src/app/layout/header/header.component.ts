@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {Language} from '../../translation/language.enum';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {UserDialogComponent} from '../../user/dialog/user-dialog/user-dialog.component';
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+import {selectAuth} from '../../user/store/selectors/user.selectors';
 
 @Component({
   selector: 'pps-header',
@@ -12,8 +15,12 @@ import {UserDialogComponent} from '../../user/dialog/user-dialog/user-dialog.com
 export class HeaderComponent implements OnInit {
   lang: Language;
   Language = Language;
+  auth$: Observable<boolean>;
 
-  constructor(private translate: TranslateService, public dialog: MatDialog) {
+  constructor(private translate: TranslateService,
+              public dialog: MatDialog,
+              private store: Store) {
+    this.auth$ = this.store.select(selectAuth);
   }
 
   ngOnInit(): void {
@@ -25,10 +32,13 @@ export class HeaderComponent implements OnInit {
   }
 
   openLoginDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '500px';
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
     const dialogRef = this.dialog.open(UserDialogComponent,
-      {
-        width: '500px'
-      });
+      dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

@@ -20,5 +20,7 @@
     <a class="p-2 text-dark" href="#">{{'header.link.service' | translate}}</a>
     <a class="p-2 text-dark" href="#">{{'header.link.consult' | translate}}</a>
   </nav>
-  <a class="ml-2 btn btn-outline-primary mr-2" (click)="openLoginDialog()">{{'header.button.login' | translate}}</a>
+  <a *ngIf="!(auth$ | async)" class="ml-2 btn btn-outline-primary mr-2"
+     (click)="openLoginDialog()">{{'header.button.login' | translate}}</a>
+  <span *ngIf="auth$ | async" class="icon far fa-user-circle fa-3x"></span>
 </div>
