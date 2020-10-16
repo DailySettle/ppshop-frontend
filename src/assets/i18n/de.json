@@ -65,6 +65,10 @@
 		"login": {
 			"failure": "Leider können Sie nicht einloggen！",
 			"success": "Erfolgreich eingeloggt！"
+		},
+		"signup": {
+			"failure": "Fehler!",
+			"success": "Erfolgreich registriert！"
 		}
 	},
 	"product": {

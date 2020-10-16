@@ -26,11 +26,11 @@ export class HttpService {
     return this.httpClient.post<any>(url, {username, password});
   }
 
-  signUp(user: User): Observable<User> {
+  signUp(user: User): Observable<any> {
     const url = `${this.BASE_URL}/user/signup`;
     const username = user.username;
     const password = user.password;
-    return this.httpClient.post<User>(url, {username, password});
+    return this.httpClient.post<any>(url, {username, password});
   }
 
 }

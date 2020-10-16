@@ -57,11 +57,33 @@ export class UserEffects {
       ofType(UserActions.singUp),
       concatMap((action) => this.http.signUp(action.user)
         .pipe(
-          map(payload => UserActions.signUpSuccess({payload})),
+          map(payload => {
+            console.log(payload);
+            return UserActions.signUpSuccess({payload});
+          }),
           catchError(error => of(UserActions.signUpFailure({errorMessage: error.error}))))
       )
     );
   });
 
+  signupSuccess$ = createEffect(() => {
+      return this.actions$.pipe(
+        ofType(UserActions.signUpSuccess),
+        tap((data) => {
+          this.snackBar.open(this.translateService.instant('message.signup.success'));
+        })
+      );
+    }, {dispatch: false}
+  );
+
+  signupFailure$ = createEffect(() => {
+      return this.actions$.pipe(
+        ofType(UserActions.signUpFailure),
+        tap((data) => {
+          this.snackBar.open(this.translateService.instant('message.signup.failure'));
+        })
+      );
+    }, {dispatch: false}
+  );
 
 }

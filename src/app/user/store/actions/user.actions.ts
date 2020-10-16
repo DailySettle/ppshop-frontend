@@ -2,32 +2,32 @@ import { createAction, props } from '@ngrx/store';
 import {User} from '../../model/user.model';
 
 export const login = createAction(
-  '[UserModel] Login UserModel',
+  '[User] Login User',
   props<{ user: User }>()
 );
 
 export const loginSuccess = createAction(
-  '[UserModel] Login UserModel Success',
+  '[User] Login User Success',
   props<{ payload: any }>()
 );
 
 export const loginFailure = createAction(
-  '[UserModel] Login UserModel Failure',
+  '[User] Login User Failure',
   props<{ errorMessage: string }>()
 );
 
 
 export const singUp = createAction(
-  '[UserModel] Signup UserModel',
+  '[User] Signup User',
   props<{ user: User }>()
 );
 
 export const signUpSuccess = createAction(
-  '[UserModel] Signup UserModel Success',
+  '[User] Signup User Success',
   props<{ payload: any }>()
 );
 
 export const signUpFailure = createAction(
-  '[UserModel] Signup UserModel Failure',
+  '[User] Signup User Failure',
   props<{ errorMessage: string }>()
 );

@@ -65,6 +65,10 @@
 		"login": {
 			"failure": "You aren't able to login",
 			"success": "Login successfully"
+		},
+		"signup": {
+			"failure": "Signup failure",
+			"success": "Signup success"
 		}
 	},
 	"product": {

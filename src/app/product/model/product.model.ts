@@ -2,7 +2,7 @@ import {CategoryType} from './category-type.enum';
 
 export class Product {
 
-  constructor(public id: number,
+  constructor(public id: string,
               public name: string,
               public category: CategoryType,
               public description: string,
