@@ -4,11 +4,12 @@ import { StoreModule } from '@ngrx/store';
 import * as fromOrder from './store/reducers/order.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { OrderEffects } from './store/effects/order.effects';
+import {CheckoutComponent} from './checkout/checkout.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [CheckoutComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature(fromOrder.orderFeatureKey, fromOrder.reducer),

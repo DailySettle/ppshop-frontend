@@ -9,6 +9,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 
 const share = [
@@ -20,7 +25,12 @@ const share = [
   MatDialogModule,
   MatTabsModule,
   MatTooltipModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatInputModule
 ];
 
 @NgModule({

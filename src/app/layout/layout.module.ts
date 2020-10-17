@@ -9,6 +9,7 @@ import {ProductModule} from '../product/product.module';
 import {CartModule} from '../cart/cart.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NavSidebarComponent } from './nav-sidebar/nav-sidebar.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -20,13 +21,14 @@ import { NavSidebarComponent } from './nav-sidebar/nav-sidebar.component';
     ToolbarComponent,
     NavSidebarComponent
   ],
-  imports: [
-    CommonModule,
-    ShareModule,
-    TranslateModule,
-    ProductModule,
-    CartModule
-  ]
+    imports: [
+        CommonModule,
+        ShareModule,
+        TranslateModule,
+        ProductModule,
+        CartModule,
+        RouterModule
+    ]
 })
 export class LayoutModule {
 }

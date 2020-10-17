@@ -10,7 +10,8 @@
     {{'toolbar.wishlist' |translate}}
     <mat-icon [matBadge]="numberOfItemsInWishlist | async" matBadgeColor="warn">favorite</mat-icon>
   </span>
-  <span class="cursor pr-3" aria-label="Example icon-button with shopping_cart icon">
+  <span class="cursor pr-3" aria-label="Example icon-button with shopping_cart icon"
+  routerLink="/shopping-cart">
     {{'toolbar.cart' |translate}}
     <mat-icon [matBadge]="numberOfItemsInCart | async" matBadgeColor="warn">shopping_cart</mat-icon>
   </span>
