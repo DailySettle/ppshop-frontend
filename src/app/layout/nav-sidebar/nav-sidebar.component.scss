@@ -5,12 +5,12 @@
   top: 71px + 64px;
   left: 0;
   z-index: 990;
-  height: 230px;
+  height: 138px;
   overflow: hidden;
   transition: all 0.25s;
 
   &:hover {
-    width: 200px;
+    width: 150px;
 
     .navbar-nav li {
       &:hover {

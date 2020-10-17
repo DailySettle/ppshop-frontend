@@ -80,10 +80,8 @@
 		}
 	},
 	"sidebar": {
-		"baby-products": "Babyprodukt",
+		"candy": "Süßigkeiten",
 		"fastfood": "Fastfood",
-		"freshfood": "Freshfood",
-		"toy": "Spielzeug",
 		"veges": "Gemüse"
 	},
 	"toolbar": {

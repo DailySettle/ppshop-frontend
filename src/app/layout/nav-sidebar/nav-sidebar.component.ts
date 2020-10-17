@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {tap} from 'rxjs/operators';
+import {CategoryType} from 'src/app/product/model/category-type.enum';
+import {Store} from '@ngrx/store';
+import {selectProductType} from '../../product/store/actions/product.actions';
 
 @Component({
   selector: 'pps-nav-sidebar',
@@ -9,8 +12,10 @@ import {tap} from 'rxjs/operators';
 })
 export class NavSidebarComponent implements OnInit {
   showSidebar = true;
+  CategoryType = CategoryType;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private store: Store) {
   }
 
   ngOnInit(): void {
@@ -19,4 +24,7 @@ export class NavSidebarComponent implements OnInit {
     );
   }
 
+  select(selectType: CategoryType): void {
+    this.store.dispatch(selectProductType({selectType}));
+  }
 }

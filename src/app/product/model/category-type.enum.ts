@@ -1,6 +1,7 @@
 export enum CategoryType {
 
-  SNACK,
-  FASTFOOD,
-  FRESHFOOD
+  FASTFOOD = 'FASTFOOD',
+  VEGES = 'VEGES',
+  CANDY = 'CANDY'
+
 }

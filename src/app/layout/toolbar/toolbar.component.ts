@@ -3,6 +3,7 @@ import {Store} from '@ngrx/store';
 import {selectNumberOfItemInCart} from '../../cart/store/selectors/cart.selectors';
 import {Observable} from 'rxjs';
 import {selectNumberOfProductInWishlist} from '../../wishlist/store/selectors/wish.selectors';
+import {selectProductType} from '../../product/store/actions/product.actions';
 
 @Component({
   selector: 'pps-toolbar',
@@ -22,4 +23,7 @@ export class ToolbarComponent implements OnInit {
 
   }
 
+  showAllProducts(): void {
+    this.store.dispatch(selectProductType({selectType: null}));
+  }
 }

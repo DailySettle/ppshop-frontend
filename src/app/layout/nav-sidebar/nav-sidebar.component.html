@@ -1,33 +1,21 @@
 <div class="side-menu">
   <ul class="nav navbar-nav">
-    <li>
+    <li (click)="select(CategoryType.FASTFOOD)">
       <a>
         <span class="icon fas fa-pizza-slice"></span>
         <span class="title">{{'sidebar.fastfood' | translate}}</span>
       </a>
     </li>
-    <li>
-      <a>
-        <span class="icon fas fa-fish"></span>
-        <span class="title">{{'sidebar.freshfood' | translate}}</span>
-      </a>
-    </li>
-    <li>
+    <li (click)="select(CategoryType.VEGES)">
       <a>
         <span class="icon fas fa-carrot"></span>
         <span class="title">{{'sidebar.veges' | translate}}</span>
       </a>
     </li>
-    <li>
+    <li (click)="select(CategoryType.CANDY)">
       <a>
-        <span class="icon fas fa-baby-carriage"></span>
-        <span class="title">{{'sidebar.baby-products' | translate}}</span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span class="icon fas fa-car-side"></span>
-        <span class="title">{{'sidebar.toy' | translate}}</span>
+        <span class="icon fas fa-candy-cane"></span>
+        <span class="title">{{'sidebar.candy' | translate}}</span>
       </a>
     </li>
   </ul>
