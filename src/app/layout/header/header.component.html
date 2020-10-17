@@ -1,10 +1,10 @@
-<div class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-  <h2 class="my-0 font-weight-normal">{{'header.logo' | translate}}</h2>
-  <button class="btn ml-2 mr-md-auto" mat-button [matMenuTriggerFor]="menu" routerLink="/home">
+<nav class="navbar navbar-light bg-light sticky-top">
+  <h2 class="my-0 font-weight-normal" routerLink="/home">{{'header.logo' | translate}}</h2>
+  <button class="btn ml-2 mr-md-auto" mat-button [matMenuTriggerFor]="langMenu">
     <mat-icon>language</mat-icon>
     Language
   </button>
-  <mat-menu #menu="matMenu">
+  <mat-menu #langMenu="matMenu">
     <button mat-menu-item (click)="setLang(Language.CN)"
             [ngStyle]="{'color' : lang===Language.CN ? 'blue' : 'inherit' }">CN
     </button>
@@ -15,12 +15,20 @@
             [ngStyle]="{'color' : lang===Language.EN ? 'blue' : 'inherit' }">EN
     </button>
   </mat-menu>
-  <nav class="my-2 my-md-0 mr-md-3">
+  <nav class="my-2">
     <a class="p-2 text-dark" routerLink="/home">{{'header.link.product' | translate}}</a>
     <a class="p-2 text-dark" href="#">{{'header.link.service' | translate}}</a>
     <a class="p-2 text-dark" href="#">{{'header.link.consult' | translate}}</a>
   </nav>
   <a *ngIf="!(auth$ | async)" class="ml-2 btn btn-outline-primary mr-2"
      (click)="openLoginDialog()">{{'header.button.login' | translate}}</a>
-  <span *ngIf="auth$ | async" class="icon far fa-user-circle fa-3x"></span>
-</div>
+  <button *ngIf="auth$ | async" mat-icon-button [mat-menu-trigger-for]="profileMenu">
+    <span class="icon far fa-user-circle fa-2x"></span>
+  </button>
+  <mat-menu #profileMenu="matMenu">
+    <button mat-menu-item routerLink="/profile">Profile
+    </button>
+    <button mat-menu-item (click)="logout()">Logout
+    </button>
+  </mat-menu>
+</nav>

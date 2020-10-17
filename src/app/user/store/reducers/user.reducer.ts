@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {Action, createReducer, on} from '@ngrx/store';
 import * as UserActions from '../actions/user.actions';
 import {User} from '../../model/user.model';
 
@@ -21,9 +21,10 @@ export const reducer = createReducer(
   initialState,
 
   on(UserActions.loginSuccess,
-    (state, action) => ({...state, user: new User(action.payload.username, ''), isAuthenticated: true})),
+    (state, {payload}) => ({...state, user: new User(payload.username, ''), isAuthenticated: true})),
   on(UserActions.loginFailure,
-    (state, action) => ({...state, errorMessage: action.errorMessage})),
-
+    (state, {errorMessage}) => ({...state, errorMessage})),
+  on(UserActions.logout,
+    (state) => ({...state, isAuthenticated: false})),
 );
 

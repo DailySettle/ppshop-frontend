@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {User} from '../../model/user.model';
-import {singUp} from '../../store/actions/user.actions';
+import {signUp} from '../../store/actions/user.actions';
 import {MatDialogRef} from '@angular/material/dialog';
 
 function passwordMatchValidator(form): any {
@@ -49,7 +49,7 @@ export class SignupComponent implements OnInit {
     const username = this.signupForm.get('username').value;
     const password = this.signupForm.get('password').value;
     const user = new User(username, password);
-    this.store.dispatch(singUp({user}));
+    this.store.dispatch(signUp({user}));
     this.dialogRef.close();
   }
 }

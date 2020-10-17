@@ -6,6 +6,7 @@ import {UserDialogComponent} from '../../user/dialog/user-dialog/user-dialog.com
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {selectAuth} from '../../user/store/selectors/user.selectors';
+import {logout} from 'src/app/user/store/actions/user.actions';
 
 @Component({
   selector: 'pps-header',
@@ -43,5 +44,9 @@ export class HeaderComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  logout(): void {
+    this.store.dispatch(logout());
   }
 }

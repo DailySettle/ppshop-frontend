@@ -54,7 +54,7 @@ export class UserEffects {
 
   signup$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(UserActions.singUp),
+      ofType(UserActions.signUp),
       concatMap((action) => this.http.signUp(action.user)
         .pipe(
           map(payload => {
@@ -86,4 +86,10 @@ export class UserEffects {
     }, {dispatch: false}
   );
 
+  logout$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(UserActions.logout),
+      tap(() => localStorage.removeItem('token'))
+    );
+  }, {dispatch: false});
 }

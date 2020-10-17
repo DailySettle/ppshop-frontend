@@ -16,8 +16,7 @@ export const loginFailure = createAction(
   props<{ errorMessage: string }>()
 );
 
-
-export const singUp = createAction(
+export const signUp = createAction(
   '[User] Signup User',
   props<{ user: User }>()
 );
@@ -30,4 +29,8 @@ export const signUpSuccess = createAction(
 export const signUpFailure = createAction(
   '[User] Signup User Failure',
   props<{ errorMessage: string }>()
+);
+
+export const logout = createAction(
+  '[User] Logout User'
 );
