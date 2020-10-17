@@ -1,5 +1,13 @@
 <div class="card mb-4 shadow-sm">
-  <span>{{productItem.name}}</span>
+
+  <div class="text-center">
+    <h3 class="card-title">
+    <span *ngIf="productItem.newArrive" class="badge badge-pill badge-success float-left">New</span>
+      {{productItem.name}}
+    <span *ngIf="productItem.onSale" class="badge badge-pill badge-danger float-right">On sale</span>
+    </h3>
+  </div>
+
   <img class="bd-placeholder-img card-img-top" width="100%" alt="product-image"
        [src]="productItem.imageUrl">
   <div class="card-body">
