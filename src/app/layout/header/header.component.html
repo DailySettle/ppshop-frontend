@@ -1,8 +1,8 @@
 <nav class="navbar navbar-light bg-light sticky-top">
   <h2 class="my-0 font-weight-normal" routerLink="/home">{{'header.logo' | translate}}</h2>
-  <button class="btn ml-2 mr-md-auto" mat-button [matMenuTriggerFor]="langMenu">
+  <button class="btn ml-2" mat-button [matMenuTriggerFor]="langMenu">
     <mat-icon>language</mat-icon>
-    Language
+    Language Select
   </button>
   <mat-menu #langMenu="matMenu">
     <button mat-menu-item (click)="setLang(Language.CN)"
@@ -15,6 +15,10 @@
             [ngStyle]="{'color' : lang===Language.EN ? 'blue' : 'inherit' }">EN
     </button>
   </mat-menu>
+  <form class="form-inline my-2 my-lg-0 mr-md-auto">
+    <input class="form-control mr-sm-2" type="search" placeholder="{{'header.search' | translate}}" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{'header.search' | translate}}</button>
+  </form>
   <nav class="my-2">
     <a class="p-2 text-dark" routerLink="/home">{{'header.link.product' | translate}}</a>
     <a class="p-2 text-dark" href="#">{{'header.link.service' | translate}}</a>

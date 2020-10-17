@@ -59,7 +59,8 @@
 			"product": "Produkt",
 			"service": "Service"
 		},
-		"logo": "PangPang Online-Shop"
+		"logo": "PangPang Online-Shop",
+		"search": "Suche"
 	},
 	"message": {
 		"login": {

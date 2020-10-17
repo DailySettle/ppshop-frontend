@@ -59,7 +59,8 @@
 			"product": "商品",
 			"service": "服务"
 		},
-		"logo": "胖胖-网店"
+		"logo": "胖胖-网店",
+		"search": "查找"
 	},
 	"message": {
 		"login": {
