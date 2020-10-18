@@ -87,6 +87,7 @@
 	"toolbar": {
 		"cart": "Shopping-cart",
 		"category": "Category",
+		"newArrive": "New arrive",
 		"sale": "On sale",
 		"wishlist": "Wishlist"
 	}

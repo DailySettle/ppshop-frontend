@@ -26,4 +26,12 @@ export class ToolbarComponent implements OnInit {
   showAllProducts(): void {
     this.store.dispatch(selectProductType({selectType: null}));
   }
+
+  showNewProducts(): void {
+    this.store.dispatch(selectProductType({selectType: 'NEW'}));
+  }
+
+  showDiscountedProducts(): void {
+    this.store.dispatch(selectProductType({selectType: 'SALE'}));
+  }
 }

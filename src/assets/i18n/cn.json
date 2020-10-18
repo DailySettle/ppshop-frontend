@@ -87,6 +87,7 @@
 	"toolbar": {
 		"cart": "购物车",
 		"category": "全部商品",
+		"newArrive": "新近商品",
 		"sale": "限时特卖",
 		"wishlist": "愿望单"
 	}

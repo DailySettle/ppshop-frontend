@@ -7,7 +7,7 @@ export const productFeatureKey = 'product';
 
 export interface ProductState {
   products: Product[];
-  selectType: CategoryType;
+  selectType: CategoryType | 'NEW' | 'SALE';
   errorMessage: string | null;
 }
 

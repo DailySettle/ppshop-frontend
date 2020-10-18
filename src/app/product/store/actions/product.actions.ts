@@ -1,4 +1,4 @@
-import { createAction, props } from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
 import {Product} from '../../model/product.model';
 import {CategoryType} from '../../model/category-type.enum';
 
@@ -18,5 +18,5 @@ export const loadAllProductsFailure = createAction(
 
 export const selectProductType = createAction(
   '[Product] Load Certain Type Products',
-  props<{ selectType: CategoryType | null }>()
+  props<{ selectType: CategoryType | 'NEW' | 'SALE' | null }>()
 );

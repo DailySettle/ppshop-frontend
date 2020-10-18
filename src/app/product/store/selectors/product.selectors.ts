@@ -19,9 +19,16 @@ export const selectOneTypeOfProduct = createSelector(
   selectAllProduct,
   selectType,
   (state, type) => {
-    if (type){
-      return state.filter(product => product.category === type);
-    }else {
+    if (type) {
+      switch (type) {
+        case 'NEW':
+          return state.filter(product => product.newArrive === true);
+        case 'SALE':
+          return state.filter(product => product.onSale === true);
+        default:
+          return state.filter(product => product.category === type);
+      }
+    } else {
       return state;
     }
   }
