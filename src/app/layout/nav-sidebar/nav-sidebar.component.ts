@@ -12,6 +12,7 @@ import {selectProductType} from '../../product/store/actions/product.actions';
 })
 export class NavSidebarComponent implements OnInit {
   showSidebar = true;
+  selectedType: CategoryType = null;
   CategoryType = CategoryType;
 
   constructor(private route: ActivatedRoute,
@@ -25,6 +26,12 @@ export class NavSidebarComponent implements OnInit {
   }
 
   select(selectType: CategoryType): void {
+    this.selectedType = selectType;
     this.store.dispatch(selectProductType({selectType}));
+  }
+
+  reset(): void {
+    this.selectedType = null;
+    this.store.dispatch(selectProductType({selectType: null}));
   }
 }

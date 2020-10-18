@@ -1,5 +1,6 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 import * as fromProduct from '../reducers/product.reducer';
+import {ProductGroup} from '../../model/product-group.enum';
 
 export const selectProductState = createFeatureSelector<fromProduct.ProductState>(
   fromProduct.productFeatureKey
@@ -15,21 +16,34 @@ export const selectType = createSelector(
   state => state.selectType
 );
 
-export const selectOneTypeOfProduct = createSelector(
+export const selectGroup = createSelector(
+  selectProductState,
+  state => state.productGroup
+);
+
+export const selectFilteredProduct = createSelector(
   selectAllProduct,
   selectType,
-  (state, type) => {
-    if (type) {
-      switch (type) {
-        case 'NEW':
-          return state.filter(product => product.newArrive === true);
-        case 'SALE':
-          return state.filter(product => product.onSale === true);
+  selectGroup,
+  (state, type, group) => {
+    let result = state;
+    if (group) {
+      switch (group) {
+        case ProductGroup.NEW: {
+          result = result.filter(product => product.newArrive === true);
+          break;
+        }
+        case ProductGroup.SALE: {
+          result = result.filter(product => product.onSale === true);
+          break;
+        }
         default:
-          return state.filter(product => product.category === type);
+          break;
       }
-    } else {
-      return state;
     }
+    if (type) {
+      result = result.filter(product => product.category === type);
+    }
+    return result;
   }
 );

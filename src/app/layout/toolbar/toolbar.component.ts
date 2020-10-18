@@ -3,7 +3,8 @@ import {Store} from '@ngrx/store';
 import {selectNumberOfItemInCart} from '../../cart/store/selectors/cart.selectors';
 import {Observable} from 'rxjs';
 import {selectNumberOfProductInWishlist} from '../../wishlist/store/selectors/wish.selectors';
-import {selectProductType} from '../../product/store/actions/product.actions';
+import {selectProductGroup} from '../../product/store/actions/product.actions';
+import {ProductGroup} from '../../product/model/product-group.enum';
 
 @Component({
   selector: 'pps-toolbar',
@@ -13,6 +14,8 @@ import {selectProductType} from '../../product/store/actions/product.actions';
 export class ToolbarComponent implements OnInit {
   numberOfItemsInCart: Observable<number>;
   numberOfItemsInWishlist: Observable<number>;
+  selectedTab: ProductGroup = ProductGroup.ALL;
+  ProductGroup = ProductGroup;
 
   constructor(private store: Store) {
     this.numberOfItemsInCart = this.store.select(selectNumberOfItemInCart);
@@ -24,14 +27,17 @@ export class ToolbarComponent implements OnInit {
   }
 
   showAllProducts(): void {
-    this.store.dispatch(selectProductType({selectType: null}));
+    this.selectedTab = ProductGroup.ALL;
+    this.store.dispatch(selectProductGroup({selectGroup: ProductGroup.ALL}));
   }
 
   showNewProducts(): void {
-    this.store.dispatch(selectProductType({selectType: 'NEW'}));
+    this.selectedTab = ProductGroup.NEW;
+    this.store.dispatch(selectProductGroup({selectGroup: ProductGroup.NEW}));
   }
 
   showDiscountedProducts(): void {
-    this.store.dispatch(selectProductType({selectType: 'SALE'}));
+    this.selectedTab = ProductGroup.SALE;
+    this.store.dispatch(selectProductGroup({selectGroup: ProductGroup.SALE}));
   }
 }

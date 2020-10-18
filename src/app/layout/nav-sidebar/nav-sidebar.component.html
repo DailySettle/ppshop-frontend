@@ -1,21 +1,27 @@
 <div class="side-menu">
   <ul class="nav navbar-nav">
-    <li (click)="select(CategoryType.FASTFOOD)">
+    <li [ngClass]="selectedType === CategoryType.FASTFOOD?'selected':''" (click)="select(CategoryType.FASTFOOD)">
       <a>
         <span class="icon fas fa-pizza-slice"></span>
         <span class="title">{{'sidebar.fastfood' | translate}}</span>
       </a>
     </li>
-    <li (click)="select(CategoryType.VEGES)">
+    <li [ngClass]="selectedType === CategoryType.VEGES?'selected':''" (click)="select(CategoryType.VEGES)">
       <a>
         <span class="icon fas fa-carrot"></span>
         <span class="title">{{'sidebar.veges' | translate}}</span>
       </a>
     </li>
-    <li (click)="select(CategoryType.CANDY)">
+    <li [ngClass]="selectedType === CategoryType.CANDY?'selected':''" (click)="select(CategoryType.CANDY)">
       <a>
         <span class="icon fas fa-candy-cane"></span>
         <span class="title">{{'sidebar.candy' | translate}}</span>
+      </a>
+    </li>
+    <li (click)="reset()">
+      <a>
+        <span class="icon fas fa-times"></span>
+        <span class="title">{{'sidebar.reset' | translate}}</span>
       </a>
     </li>
   </ul>

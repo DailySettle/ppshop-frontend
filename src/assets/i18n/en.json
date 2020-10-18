@@ -82,6 +82,7 @@
 	"sidebar": {
 		"candy": "Candy",
 		"fastfood": "Fastfood",
+		"reset": "Reset",
 		"veges": "Vegetables"
 	},
 	"toolbar": {

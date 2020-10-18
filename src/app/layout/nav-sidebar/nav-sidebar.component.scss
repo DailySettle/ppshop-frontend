@@ -1,11 +1,16 @@
+@import "src/styles";
+
+$iconNumber: 4;
+$iconHeight: 46px;
+
 .side-menu {
   width: 60px;
-  background-color: #3f51b5;
+  background-color: $ppBlue;
   position: fixed;
-  top: 71px + 64px;
+  top: $heightHeader + $heightToolbar;
   left: 0;
   z-index: 990;
-  height: 138px;
+  height: $iconHeight * $iconNumber;
   overflow: hidden;
   transition: all 0.25s;
 
@@ -15,7 +20,7 @@
     .navbar-nav li {
       &:hover {
         font-weight: bold;
-        background-color: #006384;
+        background-color: dodgerblue;
         cursor: pointer;
       }
 
@@ -33,7 +38,7 @@
   .navbar-nav li {
 
     &.selected {
-      background-color: #005475;
+      background-color: dodgerblue;
     }
 
     &:focus {

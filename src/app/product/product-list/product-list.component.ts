@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {Product} from '../model/product.model';
 import {Store} from '@ngrx/store';
 import {loadAllProducts} from '../store/actions/product.actions';
-import {selectOneTypeOfProduct} from '../store/selectors/product.selectors';
+import {selectFilteredProduct} from '../store/selectors/product.selectors';
 
 @Component({
   selector: 'pps-product-list',
@@ -18,7 +18,7 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(loadAllProducts());
-    this.productList = this.store.select(selectOneTypeOfProduct);
+    this.productList = this.store.select(selectFilteredProduct);
   }
 
 }

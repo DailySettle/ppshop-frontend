@@ -82,6 +82,7 @@
 	"sidebar": {
 		"candy": "甜食",
 		"fastfood": "快食",
+		"reset": "撤销分类",
 		"veges": "蔬菜"
 	},
 	"toolbar": {
