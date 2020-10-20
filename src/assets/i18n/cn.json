@@ -79,6 +79,14 @@
 			"quantity": "库存"
 		}
 	},
+	"shopping-cart": {
+		"image": "图片",
+		"name": "商品",
+		"price": "价格",
+		"quantity": "数量",
+		"title": "购物车",
+		"totalPrice": "总计"
+	},
 	"sidebar": {
 		"candy": "甜食",
 		"fastfood": "快食",

@@ -79,6 +79,14 @@
 			"quantity": "Inventory"
 		}
 	},
+  "shopping-cart": {
+    "image": "Image",
+    "name": "Name",
+    "price": "Price",
+    "quantity": "Quantity",
+    "title": "Your cart",
+    "totalPrice": "Total price"
+  },
 	"sidebar": {
 		"candy": "Candy",
 		"fastfood": "Fastfood",
