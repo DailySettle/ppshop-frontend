@@ -84,7 +84,7 @@
     "name": "Name",
     "price": "Price",
     "quantity": "Quantity",
-    "title": "Your cart",
+    "title": "Your cart has {{number}} products",
     "totalPrice": "Total price"
   },
 	"sidebar": {

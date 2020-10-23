@@ -8,6 +8,7 @@ import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {TableModule} from 'primeng/table';
 import {FormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
+import {ButtonModule} from 'primeng/button';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {TranslateModule} from '@ngx-translate/core';
     EffectsModule.forFeature([CartEffects]),
     TableModule,
     FormsModule,
-    TranslateModule
+    TranslateModule,
+    ButtonModule
   ]
 })
 export class CartModule {

@@ -1,14 +1,14 @@
 <mat-toolbar color="primary">
   <span class="cursor borderRight pl-1 pr-3" [ngClass]="selectedTab ===ProductGroup.ALL?'selected':''"
-        aria-label="Example icon-button with menu icon" (click)="showAllProducts()">
+        routerLink="/home" aria-label="Example icon-button with menu icon" (click)="showAllProducts()">
     <i class="fas fa-bars pr-1"></i>{{'toolbar.category' |translate}}
   </span>
   <span class="cursor borderRight pl-3 pr-3" [ngClass]="selectedTab ===ProductGroup.NEW?'selected':''"
-        aria-label="Example icon-button with menu icon" (click)="showNewProducts()">
+        routerLink="/home" aria-label="Example icon-button with menu icon" (click)="showNewProducts()">
     <i class="fas fa-bullhorn pr-1"></i>{{'toolbar.newArrive' |translate}}
   </span>
   <span class="cursor borderRight pl-3 pr-3" [ngClass]="selectedTab ===ProductGroup.SALE?'selected':''"
-        aria-label="Example icon-button with menu icon" (click)="showDiscountedProducts()">
+        routerLink="/home" aria-label="Example icon-button with menu icon" (click)="showDiscountedProducts()">
     <i class="fas fa-percent pr-1"></i>{{'toolbar.sale' |translate}}
   </span>
   <span class="example-spacer"></span>

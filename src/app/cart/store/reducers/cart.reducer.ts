@@ -17,9 +17,6 @@ export const initialState: CartState = {
 export const reducer = createReducer(
   initialState,
 
-  on(CartActions.loadCarts, state => state),
-  on(CartActions.loadCartsSuccess, (state, action) => state),
-  on(CartActions.loadCartsFailure, (state, action) => state),
   on(CartActions.addToCarts, (state, {product}) => {
     const newCart = _.cloneDeep(state.cart);
     if (newCart.find(productInCart => productInCart.product.id === product.id)) {
@@ -29,6 +26,14 @@ export const reducer = createReducer(
       return ({...state, cart: newCart});
     }
   }),
-  on(CartActions.removeFromCarts, (state, action) => state),
+  on(CartActions.removeFromCarts, (state) => state),
+  on(CartActions.changeQtyInCarts, ((state, {product, qty}) => {
+    const oldCart = _.cloneDeep(state.cart);
+    const updateProduct = oldCart.find(cartItem => cartItem.product.id === product.id);
+    if (updateProduct) {
+      updateProduct.qty += qty;
+    }
+    return ({...state, cart: oldCart});
+  }))
 );
 

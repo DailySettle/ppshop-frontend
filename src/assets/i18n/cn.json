@@ -84,7 +84,7 @@
 		"name": "商品",
 		"price": "价格",
 		"quantity": "数量",
-		"title": "购物车",
+		"title": "购物车里共有{{number}}种商品。",
 		"totalPrice": "总计"
 	},
 	"sidebar": {

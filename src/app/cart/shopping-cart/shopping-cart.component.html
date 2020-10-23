@@ -3,7 +3,7 @@
     <p-table [value]="cartItems$ | async">
       <ng-template pTemplate="caption">
         <div class="p-d-flex p-ai-center p-jc-between">
-          {{'shopping-cart.title' | translate}}
+          {{'shopping-cart.title' | translate: param}}
         </div>
       </ng-template>
       <ng-template pTemplate="header">
@@ -19,7 +19,11 @@
           <td>{{cartItem.product.name}}</td>
           <td><img [src]="cartItem.product.imageUrl" [alt]="cartItem.product.name" width="100" class="p-shadow-4"/></td>
           <td>{{cartItem.product.price | currency:'EUR'}}</td>
-          <td>{{cartItem.qty}}</td>
+          <td class="my-auto">
+            <span class="icon fas fa-plus pr-1 cursor" (click)="qtyIncrease(cartItem.product)"></span>
+            {{cartItem.qty}}
+            <span class="icon fas fa-minus pl-1 cursor" (click)="qtyDecrease(cartItem.product)"></span>
+          </td>
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">
