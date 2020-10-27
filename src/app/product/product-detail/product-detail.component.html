@@ -1,1 +1,28 @@
-<p>product-detail works!</p>
+<div class="container-lg">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-5" *ngIf="product$ | async as product">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{product.name}}</mat-card-title>
+          <mat-card-subtitle>{{product.price | currency:'EUR'}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="product.imageUrl" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            {{product.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button button color="primary" (click)="handleAddToCart(product)">添加到购物车</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-5">
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
+</div>

@@ -11,6 +11,11 @@ export const selectAllProduct = createSelector(
   state => state.products
 );
 
+export const selectProductById = createSelector(
+  selectProductState,
+  (state, props) => state.products.find(product => product.id === props.id)
+);
+
 export const selectType = createSelector(
   selectProductState,
   state => state.selectType

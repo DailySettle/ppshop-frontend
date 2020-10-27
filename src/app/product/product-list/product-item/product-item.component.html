@@ -2,9 +2,9 @@
 
   <div class="text-center">
     <h3 class="card-title">
-    <span *ngIf="productItem.newArrive" class="badge badge-pill badge-success float-left">New</span>
+      <span *ngIf="productItem.newArrive" class="badge badge-pill badge-success float-left">New</span>
       {{productItem.name}}
-    <span *ngIf="productItem.onSale" class="badge badge-pill badge-danger float-right">On sale</span>
+      <span *ngIf="productItem.onSale" class="badge badge-pill badge-danger float-right">On sale</span>
     </h3>
   </div>
 
@@ -19,8 +19,9 @@
       <div class="btn-group">
         <button type="button" class="btn btn-sm btn-primary product-btn"
                 (click)="handleAddToCart()">{{'product.item.addToCart'| translate}}</button>
-        <button type="button"
-                class="btn btn-sm btn-secondary product-btn">{{'product.item.detail' | translate}}</button>
+        <button type="button" class="btn btn-sm btn-secondary product-btn" [routerLink]="['/product', productItem.id]">
+          {{'product.item.detail' | translate}}
+        </button>
       </div>
       <span>{{'product.item.quantity'| translate}}：{{productItem.quantity}}</span>
     </div>
