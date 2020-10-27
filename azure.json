@@ -8,9 +8,9 @@
         "path": "dist/ppshop-frontend"
       },
       "azureHosting": {
-        "subscription": "6c7e91bb-9878-4139-ac5c-8d8c7827e8d1",
-        "resourceGroupName": "ppshop-frontend-static-deploy",
-        "account": "ppshopfrontendstatic"
+        "subscription": "def94520-fff3-4713-98b1-845b4f94af26",
+        "resourceGroupName": "ppshop",
+        "account": "ppshopstatic"
       }
     }
   ]

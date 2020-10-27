@@ -9,6 +9,7 @@ import {TableModule} from 'primeng/table';
 import {FormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {ButtonModule} from 'primeng/button';
     TableModule,
     FormsModule,
     TranslateModule,
-    ButtonModule
+    ButtonModule,
+    RouterModule
   ]
 })
 export class CartModule {
