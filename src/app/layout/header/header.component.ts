@@ -38,12 +38,7 @@ export class HeaderComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    const dialogRef = this.dialog.open(UserDialogComponent,
-      dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(UserDialogComponent, dialogConfig);
   }
 
   logout(): void {

@@ -1,4 +1,4 @@
-<div class="side-menu">
+<div class="side-menu" *ngIf="showSidebar">
   <ul class="nav navbar-nav">
     <li [ngClass]="selectedType === CategoryType.FASTFOOD?'selected':''" (click)="select(CategoryType.FASTFOOD)">
       <a>

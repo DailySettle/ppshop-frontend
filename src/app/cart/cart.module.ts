@@ -9,8 +9,8 @@ import {TableModule} from 'primeng/table';
 import {FormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
-import {RouterModule} from '@angular/router';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {AppRoutingModule} from '../app-routing.module';
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     FormsModule,
     TranslateModule,
     ButtonModule,
-    RouterModule,
+    AppRoutingModule,
     MatTooltipModule
   ]
 })

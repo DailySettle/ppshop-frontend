@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Event, NavigationEnd, Route, Router} from '@angular/router';
 import {tap} from 'rxjs/operators';
 import {CategoryType} from 'src/app/product/model/category-type.enum';
 import {Store} from '@ngrx/store';
@@ -15,13 +15,22 @@ export class NavSidebarComponent implements OnInit {
   selectedType: CategoryType = null;
   CategoryType = CategoryType;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private router: Router,
+              private route: ActivatedRoute,
               private store: Store) {
   }
 
   ngOnInit(): void {
-    this.route.url.pipe(
-      tap(console.log)
+    this.router.events.subscribe(
+      (event: Event) => {
+        if (event instanceof NavigationEnd) {
+          if (event.url.includes('home') || event.url.includes('product')) {
+            this.showSidebar = true;
+          } else {
+            this.showSidebar = false;
+          }
+        }
+      }
     );
   }
 
