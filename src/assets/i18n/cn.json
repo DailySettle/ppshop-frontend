@@ -99,5 +99,13 @@
 		"newArrive": "新近商品",
 		"sale": "限时特卖",
 		"wishlist": "愿望单"
+	},
+	"wishlist": {
+		"image": "图片",
+		"name": "商品",
+		"notifyme": "通知我",
+		"price": "价格",
+		"rating": "评分",
+		"title": "愿望单里共有{{number}}种商品。"
 	}
 }

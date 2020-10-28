@@ -1,0 +1,32 @@
+<div class="container-lg">
+  <div class="row" *ngIf="items$ | async as items">
+    <p-table [value]="items">
+      <ng-template pTemplate="caption">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          {{'wishlist.title' | translate: param}}
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>{{'wishlist.name' | translate}}</th>
+          <th>{{'wishlist.image' | translate}}</th>
+          <th>{{'wishlist.price' | translate}}</th>
+          <th>{{'wishlist.rating' | translate}}</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td>{{item.name}}</td>
+          <td><img [src]="item.imageUrl" [alt]="item.name" width="100" class="p-shadow-4"/></td>
+          <td>{{item.price | currency:'EUR'}}</td>
+          <td><p-rating [ngModel]="item.rating" [readonly]="true" [cancel]="false"></p-rating></td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <div class="pb-3 mb-3">
+          <button class="btn btn-primary float-right">{{'wishlist.notifyme' | translate}}</button>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -1,84 +1,84 @@
 {
-	"dialog": {
-		"button": {
-			"close": "Close"
-		},
-		"confirm": "Please confirm password",
-		"error": {
-			"mailbox": {
-				"invalid": "Invalid mailbox.",
-				"required": "Please enter your mailbox."
-			},
-			"password": {
-				"invalid": "Invalid password.",
-				"unmatched": "Please enter your password again."
-			}
-		},
-		"login": {
-			"button": "Login",
-			"title": "Please login",
-			"tooltip": "Please enter your email and password."
-		},
-		"mailbox": "Email",
-		"password": "password",
-		"signup": {
-			"button": "Signup",
-			"title": "Please signup",
-			"tooltip": "Please enter your email and password."
-		}
-	},
-	"footer": {
-		"aboutUs": {
-			"AGB": "AGB",
-			"Datenschutz": "Datenschutz",
-			"Impressum": "Impressum",
-			"aboutPangPang": "About PangPang",
-			"contactUs": "Contact us",
-			"title": "About us"
-		},
-		"points": {
-			"collection": "Points Collection",
-			"consumption": "Points Consumption",
-			"title": "Points"
-		},
-		"specification": {
-			"delivery": "Delivery",
-			"deliveryCost": "Delivery Cost",
-			"guarantee": "Guarantee",
-			"payment": "Payment",
-			"refund": "Refund",
-			"title": "Specification"
-		}
-	},
-	"header": {
-		"button": {
-			"login": "Login"
-		},
-		"link": {
-			"consult": "Consult",
-			"product": "Product",
-			"service": "Service"
-		},
-		"logo": "Pangpang Online-shop",
-		"search": "Search"
-	},
-	"message": {
-		"login": {
-			"failure": "You aren't able to login",
-			"success": "Login successfully"
-		},
-		"signup": {
-			"failure": "Signup failure",
-			"success": "Signup success"
-		}
-	},
-	"product": {
-		"item": {
-			"addToCart": "Add to cart",
-			"detail": "Detail",
-			"quantity": "Inventory"
-		}
-	},
+  "dialog": {
+    "button": {
+      "close": "Close"
+    },
+    "confirm": "Please confirm password",
+    "error": {
+      "mailbox": {
+        "invalid": "Invalid mailbox.",
+        "required": "Please enter your mailbox."
+      },
+      "password": {
+        "invalid": "Invalid password.",
+        "unmatched": "Please enter your password again."
+      }
+    },
+    "login": {
+      "button": "Login",
+      "title": "Please login",
+      "tooltip": "Please enter your email and password."
+    },
+    "mailbox": "Email",
+    "password": "password",
+    "signup": {
+      "button": "Signup",
+      "title": "Please signup",
+      "tooltip": "Please enter your email and password."
+    }
+  },
+  "footer": {
+    "aboutUs": {
+      "AGB": "AGB",
+      "Datenschutz": "Datenschutz",
+      "Impressum": "Impressum",
+      "aboutPangPang": "About PangPang",
+      "contactUs": "Contact us",
+      "title": "About us"
+    },
+    "points": {
+      "collection": "Points Collection",
+      "consumption": "Points Consumption",
+      "title": "Points"
+    },
+    "specification": {
+      "delivery": "Delivery",
+      "deliveryCost": "Delivery Cost",
+      "guarantee": "Guarantee",
+      "payment": "Payment",
+      "refund": "Refund",
+      "title": "Specification"
+    }
+  },
+  "header": {
+    "button": {
+      "login": "Login"
+    },
+    "link": {
+      "consult": "Consult",
+      "product": "Product",
+      "service": "Service"
+    },
+    "logo": "Pangpang Online-shop",
+    "search": "Search"
+  },
+  "message": {
+    "login": {
+      "failure": "You aren't able to login",
+      "success": "Login successfully"
+    },
+    "signup": {
+      "failure": "Signup failure",
+      "success": "Signup success"
+    }
+  },
+  "product": {
+    "item": {
+      "addToCart": "Add to cart",
+      "detail": "Detail",
+      "quantity": "Inventory"
+    }
+  },
   "shopping-cart": {
     "image": "Image",
     "name": "Name",
@@ -87,17 +87,25 @@
     "title": "Your cart has {{number}} products",
     "totalPrice": "Total price"
   },
-	"sidebar": {
-		"candy": "Candy",
-		"fastfood": "Fastfood",
-		"reset": "Reset",
-		"veges": "Vegetables"
-	},
-	"toolbar": {
-		"cart": "Shopping-cart",
-		"category": "Category",
-		"newArrive": "New arrive",
-		"sale": "On sale",
-		"wishlist": "Wishlist"
-	}
+  "sidebar": {
+    "candy": "Candy",
+    "fastfood": "Fastfood",
+    "reset": "Reset",
+    "veges": "Vegetables"
+  },
+  "toolbar": {
+    "cart": "Shopping-cart",
+    "category": "Category",
+    "newArrive": "New arrive",
+    "sale": "On sale",
+    "wishlist": "Wishlist"
+  },
+  "wishlist": {
+    "image": "Image",
+    "name": "Name",
+    "notifyme": "Notify me",
+    "price": "Price",
+    "rating": "Rating",
+    "title": "Your wishlist has {{number}} products"
+  }
 }

@@ -5,6 +5,11 @@ export const selectWishState = createFeatureSelector<fromWish.WishlistState>(
   fromWish.wishFeatureKey
 );
 
+export const selectAllProductInWishlist = createSelector(
+  selectWishState,
+  state => state.wishlist
+);
+
 export const selectNumberOfProductInWishlist = createSelector(
   selectWishState,
   state => state.wishlist.length

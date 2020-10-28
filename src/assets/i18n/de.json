@@ -99,5 +99,13 @@
 		"newArrive": "Neu",
 		"sale": "Aktion",
 		"wishlist": "Wunschliste"
+	},
+	"wishlist": {
+		"image": "Image",
+		"name": "Name",
+		"notifyme": "Notify me",
+		"price": "Price",
+		"rating": "Rate",
+		"title": "Your wishlist has {{number}} products"
 	}
 }
