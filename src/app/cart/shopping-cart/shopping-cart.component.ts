@@ -6,6 +6,7 @@ import {selectAllItemsInCart, selectNumberOfItemInCart} from '../store/selectors
 import {CartItem} from '../model/cart-item.model';
 import {changeQtyInCarts} from '../store/actions/cart.actions';
 import {Product} from '../../product/model/product.model';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'pps-shopping-cart',
@@ -16,8 +17,9 @@ export class ShoppingCartComponent implements OnInit {
   cartItems$: Observable<CartItem[]>;
   totalPrice: number;
   param: any;
+  tooltipForCheckout: string;
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -32,6 +34,9 @@ export class ShoppingCartComponent implements OnInit {
           this.totalPrice = 0;
         }
       })
+    );
+    this.translate.get('checkout.tooltip').subscribe(
+      tooltip => this.tooltipForCheckout = tooltip
     );
   }
 

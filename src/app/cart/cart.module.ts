@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
 import {RouterModule} from '@angular/router';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {RouterModule} from '@angular/router';
     FormsModule,
     TranslateModule,
     ButtonModule,
-    RouterModule
+    RouterModule,
+    MatTooltipModule
   ]
 })
 export class CartModule {

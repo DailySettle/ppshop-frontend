@@ -1,4 +1,8 @@
 {
+	"checkout": {
+		"button": "结账",
+		"tooltip": "请查看购物车是否有物品"
+	},
 	"dialog": {
 		"button": {
 			"close": "关闭"

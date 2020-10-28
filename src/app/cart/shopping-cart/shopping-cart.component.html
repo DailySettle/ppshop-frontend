@@ -1,6 +1,6 @@
 <div class="container-lg">
-  <div class="row">
-    <p-table [value]="cartItems$ | async">
+  <div class="row" *ngIf="cartItems$ | async as cartItems">
+    <p-table [value]="cartItems">
       <ng-template pTemplate="caption">
         <div class="p-d-flex p-ai-center p-jc-between">
           {{'shopping-cart.title' | translate: param}}
@@ -29,7 +29,13 @@
       <ng-template pTemplate="summary">
         <div class="py-3">
           {{'shopping-cart.totalPrice' | translate}}: {{totalPrice | currency:'EUR'}}
-          <button class="btn btn-primary float-right" routerLink="/checkout">Checkout</button>
+          <div class="float-right"
+               [matTooltip]="cartItems.length == 0 ? tooltipForCheckout:''"
+               [matTooltipHideDelay]="2000">
+            <button class="btn btn-primary" [disabled]="cartItems.length == 0" routerLink="/checkout">
+              {{ "checkout.button" | translate}}
+            </button>
+          </div>
         </div>
       </ng-template>
     </p-table>

@@ -1,4 +1,8 @@
 {
+	"checkout": {
+		"button": "Checkout",
+		"tooltip": "Check if you have put something in shopping cart!"
+	},
 	"dialog": {
 		"button": {
 			"close": "Schließen"
