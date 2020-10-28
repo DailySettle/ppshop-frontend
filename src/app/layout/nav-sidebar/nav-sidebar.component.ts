@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Event, NavigationEnd, Route, Router} from '@angular/router';
-import {tap} from 'rxjs/operators';
+import {ActivatedRoute, Event, NavigationEnd, Router} from '@angular/router';
 import {CategoryType} from 'src/app/product/model/category-type.enum';
 import {Store} from '@ngrx/store';
 import {selectProductType} from '../../product/store/actions/product.actions';
@@ -24,11 +23,7 @@ export class NavSidebarComponent implements OnInit {
     this.router.events.subscribe(
       (event: Event) => {
         if (event instanceof NavigationEnd) {
-          if (event.url.includes('home') || event.url.includes('product')) {
-            this.showSidebar = true;
-          } else {
-            this.showSidebar = false;
-          }
+          this.showSidebar = event.url.includes('home') || event.url.includes('product');
         }
       }
     );
