@@ -12,6 +12,7 @@
           <th>{{'wishlist.image' | translate}}</th>
           <th>{{'wishlist.price' | translate}}</th>
           <th>{{'wishlist.rating' | translate}}</th>
+          <th>{{'product.item.quantity'| translate}}</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-item>
@@ -20,6 +21,7 @@
           <td><img [src]="item.imageUrl" [alt]="item.name" width="100" class="p-shadow-4"/></td>
           <td>{{item.price | currency:'EUR'}}</td>
           <td><p-rating [ngModel]="item.rating" [readonly]="true" [cancel]="false"></p-rating></td>
+          <td><span [class]="'product-badge status-' + item.inventoryStatus.toLowerCase()">{{item.inventoryStatus.toLowerCase() | translate}}</span></td>
         </tr>
       </ng-template>
       <ng-template pTemplate="summary">

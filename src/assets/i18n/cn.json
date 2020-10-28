@@ -107,5 +107,8 @@
 		"price": "价格",
 		"rating": "评分",
 		"title": "愿望单里共有{{number}}种商品。"
-	}
+	},
+  "instock": "充足库存",
+  "lowstock": "少量库存",
+  "outofstock": "没有库存"
 }

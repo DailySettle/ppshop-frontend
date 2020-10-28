@@ -1,4 +1,5 @@
 import {CategoryType} from './category-type.enum';
+import {InventoryStatus} from './inventory-status.enum';
 
 export class Product {
 
@@ -8,7 +9,7 @@ export class Product {
               public description: string,
               public price: number,
               public quantity: number,
-              public inventoryStatus: 'String',
+              public inventoryStatus: InventoryStatus,
               public imageUrl: string,
               public newArrive: boolean,
               public onSale: boolean,
