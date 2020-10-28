@@ -30,7 +30,7 @@
         <div class="py-3">
           {{'shopping-cart.totalPrice' | translate}}: {{totalPrice | currency:'EUR'}}
           <div class="float-right"
-               [matTooltip]="cartItems.length == 0 ? tooltipForCheckout:''"
+               [matTooltip]="cartItems.length == 0 ? getTooltip():''"
                [matTooltipHideDelay]="2000">
             <button class="btn btn-primary" [disabled]="cartItems.length == 0" routerLink="/checkout">
               {{ "checkout.button" | translate}}

@@ -17,7 +17,6 @@ export class ShoppingCartComponent implements OnInit {
   cartItems$: Observable<CartItem[]>;
   totalPrice: number;
   param: any;
-  tooltipForCheckout: string;
 
   constructor(private store: Store, private translate: TranslateService) {
   }
@@ -35,9 +34,6 @@ export class ShoppingCartComponent implements OnInit {
         }
       })
     );
-    this.translate.get('checkout.tooltip').subscribe(
-      tooltip => this.tooltipForCheckout = tooltip
-    );
   }
 
   qtyIncrease(product: Product): void {
@@ -46,5 +42,9 @@ export class ShoppingCartComponent implements OnInit {
 
   qtyDecrease(product: Product): void {
     this.store.dispatch(changeQtyInCarts({product, qty: -1}));
+  }
+
+  getTooltip(): string {
+    return this.translate.instant('checkout.tooltip');
   }
 }
