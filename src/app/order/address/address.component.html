@@ -1,4 +1,95 @@
-<div>
+<div class="container-lg mt-3">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-10">
+      <form [formGroup]="addressForm" (ngSubmit)="nextPage()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">{{'form.address.firstname'| translate}}</label>
+            <input type="text"
+                   class="form-control"
+                   id="firstName"
+                   formControlName="firstname"
+                   [ngClass]="{'is-invalid': addressForm.get('firstname').touched && addressForm.get('firstname').invalid}">
+            <div class="invalid-feedback">
+              {{'form.address.error.firstname'| translate}}
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">{{'form.address.lastname'| translate}}</label>
+            <input type="text"
+                   class="form-control"
+                   id="lastName"
+                   formControlName="lastname"
+                   [ngClass]="{'is-invalid': addressForm.get('lastname').touched && addressForm.get('lastname').invalid}">
+            <div class="invalid-feedback">
+              {{'form.address.error.lastname'| translate}}
+            </div>
+          </div>
+        </div>
 
-  Test
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="postcode">{{'form.address.postcode'| translate}}</label>
+            <input type="text"
+                   class="form-control"
+                   id="postcode"
+                   placeholder="XXXXX"
+                   formControlName="postcode"
+                   [ngClass]="{'is-invalid': addressForm.get('postcode').touched && addressForm.get('postcode').invalid}"
+            >
+            <div class="invalid-feedback">
+              {{'form.address.error.postcode'| translate}}
+            </div>
+          </div>
+          <div class="col-md-8 mb-3">
+            <label for="city">{{'form.address.city'| translate}}</label>
+            <input type="text"
+                   class="form-control"
+                   id="city"
+                   placeholder="Magdeburg"
+                   formControlName="city"
+                   [ngClass]="{'is-invalid': addressForm.get('city').touched && addressForm.get('city').invalid}">
+            <div class="invalid-feedback">
+              {{'form.address.error.city'| translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-10 mb-3">
+            <label for="address">{{'form.address.street'| translate}}</label>
+            <input type="text"
+                   class="form-control"
+                   id="address"
+                   placeholder="Main St"
+                   formControlName="address1"
+                   [ngClass]="{'is-invalid': addressForm.get('address1').touched && addressForm.get('address1').invalid}">
+            <div class="invalid-feedback">
+              {{'form.address.error.address'| translate}}
+            </div>
+          </div>
+
+          <div class="col-md-2 mb-3">
+            <label for="address2">{{'form.address.number'| translate}}</label>
+            <input type="text"
+                   class="form-control"
+                   id="address2"
+                   placeholder="12"
+                   formControlName="address2">
+          </div>
+        </div>
+      </form>
+
+      <div class="row justify-content-end"
+           [matTooltip]="!addressForm.valid ? getTooltip():''"
+           matTooltipPosition="right"
+           [matTooltipHideDelay]="2000">
+        <p-button label="Next" [disabled]="!addressForm.valid" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
+      </div>
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
 </div>

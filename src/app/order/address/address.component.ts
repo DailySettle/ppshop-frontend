@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {OrderService} from '../order.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Store} from '@ngrx/store';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'pps-address',
@@ -8,26 +10,36 @@ import {OrderService} from '../order.service';
   styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-  personalInformation: any;
+  addressForm: FormGroup;
 
-  submitted = false;
-
-  constructor(public orderService: OrderService, private router: Router) {
+  constructor(private builder: FormBuilder,
+              private router: Router,
+              private translate: TranslateService) {
   }
 
   ngOnInit(): void {
-    this.personalInformation = this.orderService.getTicketInformation().personalInformation;
+    this.buildForm();
   }
 
   nextPage(): void {
-    if (this.personalInformation.firstname && this.personalInformation.lastname && this.personalInformation.age) {
-      this.orderService.ticketInformation.personalInformation = this.personalInformation;
-      this.router.navigate(['steps/seat']);
-
-      return;
+    if (this.addressForm.valid) {
+      console.log(this.addressForm.value);
+      this.router.navigate(['checkout', 'payment']);
     }
-
-    this.submitted = true;
   }
 
+  buildForm(): void {
+    this.addressForm = this.builder.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      postcode: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
+      city: ['', Validators.required],
+      address1: ['', Validators.required],
+      address2: [''],
+    });
+  }
+
+  getTooltip(): void {
+    return this.translate.instant('address.tooltip');
+  }
 }

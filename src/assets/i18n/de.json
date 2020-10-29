@@ -1,4 +1,7 @@
 {
+	"address": {
+		"tooltip": "Please provide information above!"
+	},
 	"checkout": {
 		"button": "Checkout",
 		"tooltip": "Check if you have put something in shopping cart!"
@@ -54,6 +57,35 @@
 			"title": "Spezifikation"
 		}
 	},
+	"form": {
+		"address": {
+			"city": "City",
+			"error": {
+				"address": "Please provide a street name!",
+				"city": "Please provide a city!",
+				"firstname": "Please provide firstname!",
+				"lastname": "Please provide lastname!",
+				"postcode": "Please provide a postcode!"
+			},
+			"firstname": "Firstname",
+			"lastname": "Lastname",
+			"number": "Number",
+			"postcode": "Postcode",
+			"street": "Street"
+		},
+		"payment": {
+			"cvv": "cvv",
+			"date": "Date",
+			"error": {
+        "cvv": "Please provide cvv",
+        "date": "Please provide date",
+        "number": "Please provide number",
+        "owner": "Please provide owner"
+			},
+			"number": "Number",
+			"owner": "Owner"
+		}
+	},
 	"header": {
 		"button": {
 			"login": "Anmelden"
@@ -75,6 +107,9 @@
 			"failure": "Fehler!",
 			"success": "Erfolgreich registriert！"
 		}
+	},
+	"payment": {
+		"tooltip": "Please fulfill the form!"
 	},
 	"product": {
 		"item": {
@@ -111,8 +146,5 @@
 		"price": "Price",
 		"rating": "Rate",
 		"title": "Your wishlist has {{number}} products"
-	},
-  "instock": "INSTOCK",
-  "lowstock": "LOWSTOCK",
-  "outofstock": "OUTOFSTOCK"
+	}
 }

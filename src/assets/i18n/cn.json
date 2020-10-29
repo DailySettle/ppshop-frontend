@@ -1,4 +1,7 @@
 {
+	"address": {
+		"tooltip": "请填写以上信息"
+	},
 	"checkout": {
 		"button": "结账",
 		"tooltip": "请查看购物车是否有物品"
@@ -54,6 +57,35 @@
 			"title": "规则说明"
 		}
 	},
+	"form": {
+		"address": {
+			"city": "City",
+			"error": {
+				"address": "Please provide a street name!",
+				"city": "Please provide a city!",
+				"firstname": "Please provide firstname!",
+				"lastname": "Please provide lastname!",
+				"postcode": "Please provide a postcode!"
+			},
+			"firstname": "Firstname",
+			"lastname": "Lastname",
+			"number": "Number",
+			"postcode": "Postcode",
+			"street": "Street"
+		},
+		"payment": {
+			"cvv": "cvv",
+			"date": "Date",
+			"error": {
+				"cvv": "Please provide cvv",
+				"date": "Please provide date",
+				"number": "Please provide number",
+				"owner": "Please provide owner"
+			},
+			"number": "Number",
+			"owner": "Owner"
+		}
+	},
 	"header": {
 		"button": {
 			"login": "登录"
@@ -75,6 +107,9 @@
 			"failure": "注册失败！",
 			"success": "注册成功！"
 		}
+	},
+	"payment": {
+		"tooltip": "请填写以上信息"
 	},
 	"product": {
 		"item": {
@@ -111,8 +146,5 @@
 		"price": "价格",
 		"rating": "评分",
 		"title": "愿望单里共有{{number}}种商品。"
-	},
-  "instock": "充足库存",
-  "lowstock": "少量库存",
-  "outofstock": "没有库存"
+	}
 }

@@ -6,7 +6,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {OrderEffects} from './store/effects/order.effects';
 import {CheckoutComponent} from './checkout/checkout.component';
 import {AppRoutingModule} from '../app-routing.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
 import {StepsModule} from 'primeng/steps';
 import {MenuModule} from 'primeng/menu';
@@ -18,6 +18,10 @@ import {MessagesModule} from 'primeng/messages';
 import {PaymentComponent} from './payment/payment.component';
 import {AddressComponent} from './address/address.component';
 import {ConfirmationComponent} from './confirmation/confirmation.component';
+import {TranslationModule} from '../translation/translation.module';
+import {InputMaskModule} from 'primeng/inputmask';
+import {CheckboxModule} from 'primeng/checkbox';
+import {ShareModule} from '../share/share.module';
 
 
 @NgModule({
@@ -35,7 +39,12 @@ import {ConfirmationComponent} from './confirmation/confirmation.component';
     CardModule,
     ToastModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    ReactiveFormsModule,
+    TranslationModule,
+    InputMaskModule,
+    CheckboxModule,
+    ShareModule
   ]
 })
 export class OrderModule {

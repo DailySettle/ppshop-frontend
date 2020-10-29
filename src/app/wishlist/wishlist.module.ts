@@ -6,9 +6,9 @@ import {EffectsModule} from '@ngrx/effects';
 import {WishEffects} from './store/effects/wish.effects';
 import {WishlistComponent} from './wishlist/wishlist.component';
 import {TableModule} from 'primeng/table';
-import {TranslateModule} from '@ngx-translate/core';
 import {RatingModule} from 'primeng/rating';
 import {FormsModule} from '@angular/forms';
+import {TranslationModule} from '../translation/translation.module';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import {FormsModule} from '@angular/forms';
     StoreModule.forFeature(fromWish.wishFeatureKey, fromWish.reducer),
     EffectsModule.forFeature([WishEffects]),
     TableModule,
-    TranslateModule,
+    TranslationModule,
     RatingModule,
     FormsModule
   ]

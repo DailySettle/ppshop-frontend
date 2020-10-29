@@ -7,10 +7,10 @@ import {CartEffects} from './store/effects/cart.effects';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {TableModule} from 'primeng/table';
 import {FormsModule} from '@angular/forms';
-import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AppRoutingModule} from '../app-routing.module';
+import {TranslationModule} from '../translation/translation.module';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import {AppRoutingModule} from '../app-routing.module';
     EffectsModule.forFeature([CartEffects]),
     TableModule,
     FormsModule,
-    TranslateModule,
+    TranslationModule,
     ButtonModule,
     AppRoutingModule,
     MatTooltipModule
