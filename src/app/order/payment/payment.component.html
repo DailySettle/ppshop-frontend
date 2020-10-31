@@ -4,25 +4,26 @@
     </div>
     <div class="col-10">
       <form [formGroup]="paymentForm" (ngSubmit)="nextPage()">
-        <div class="row">
-          <div class="col-md-12 mb-3">
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-3">
             <label for="number">{{'form.payment.number'| translate}}</label>
-            <input type="text"
-                   class="form-control"
-                   id="number"
-                   formControlName="number"
-                   [ngClass]="{'is-invalid': paymentForm.get('number').touched && paymentForm.get('number').invalid}">
+            <p-inputMask type="text"
+                         id="number"
+                         formControlName="number"
+                         mask="9999-9999-9999-9999"
+                         class="p-inputtext-lg"
+                         [ngClass]="{'is-invalid': paymentForm.get('number').touched && paymentForm.get('number').invalid}">
+            </p-inputMask>
             <div class="invalid-feedback">
               {{'form.payment.error.number'| translate}}
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3">
+
+          <div class="p-field p-col-4 p-md-3">
             <label for="owner">{{'form.payment.owner'| translate}}</label>
             <input type="text"
-                   class="form-control"
                    id="owner"
+                   class="form-control"
                    formControlName="owner"
                    [ngClass]="{'is-invalid': paymentForm.get('owner').touched && paymentForm.get('owner').invalid}">
             <div class="invalid-feedback">
@@ -30,31 +31,37 @@
             </div>
           </div>
 
-          <div class="col-md-4 mb-3">
+          <div class="p-field p-col-4 p-md-3">
             <label for="date">{{'form.payment.date'| translate}}</label>
-            <input type="text"
-                   class="form-control"
-                   id="date"
-                   formControlName="date"
-                   [ngClass]="{'is-invalid': paymentForm.get('date').touched && paymentForm.get('date').invalid}">
+            <p-inputMask type="text"
+                         id="date"
+                         formControlName="date"
+                         class="p-inputtext-lg"
+                         mask="99/99"
+                         [ngClass]="{'is-invalid': paymentForm.get('date').touched && paymentForm.get('date').invalid}">
+            </p-inputMask>
             <div class="invalid-feedback">
               {{'form.payment.error.date'| translate}}
             </div>
           </div>
-          <div class="col-md-2 mb-3">
+
+          <div class="p-field p-col-4 p-md-3">
             <label for="cvv">{{'form.payment.cvv'| translate}}</label>
-            <input type="text"
-                   class="form-control"
-                   id="cvv"
-                   formControlName="cvv"
-                   maxlength="3"
-                   [ngClass]="{'is-invalid': paymentForm.get('cvv').touched && paymentForm.get('cvv').invalid}">
+            <p-inputMask type="text"
+                         id="cvv"
+                         formControlName="cvv"
+                         class="p-inputtext-lg"
+                         mask="999"
+                         [ngClass]="{'is-invalid': paymentForm.get('cvv').touched && paymentForm.get('cvv').invalid}">
+            </p-inputMask>
             <div class="invalid-feedback">
               {{'form.payment.error.cvv'| translate}}
             </div>
           </div>
         </div>
+
       </form>
+
       <div class="row justify-content-between">
         <p-button label="Back" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
         <div

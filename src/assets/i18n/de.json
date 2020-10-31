@@ -146,5 +146,8 @@
 		"price": "Price",
 		"rating": "Rate",
 		"title": "Your wishlist has {{number}} products"
-	}
+	},
+  "instock": "INSTOCK",
+  "lowstock": "LOWSTOCK",
+  "outofstock": "OUTOFSTOCK"
 }
