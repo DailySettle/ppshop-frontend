@@ -24,7 +24,11 @@ export class AddressComponent implements OnInit {
   ngOnInit(): void {
     this.buildForm();
     this.store.select(selectOrderAddress).subscribe(
-      address => this.addressForm.patchValue(address)
+      address => {
+        if (address) {
+          this.addressForm.patchValue(address);
+        }
+      }
     );
   }
 

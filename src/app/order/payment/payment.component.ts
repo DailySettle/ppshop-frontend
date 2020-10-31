@@ -24,7 +24,11 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
     this.buildForm();
     this.store.select(selectOrderPayment).subscribe(
-      payment => this.paymentForm.patchValue(payment)
+      payment => {
+        if (payment) {
+          this.paymentForm.patchValue(payment);
+        }
+      }
     );
   }
 
