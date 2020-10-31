@@ -11,6 +11,8 @@ import {NavSidebarComponent} from './nav-sidebar/nav-sidebar.component';
 import {CarouselComponent} from './carousel/carousel.component';
 import {AppRoutingModule} from '../app-routing.module';
 import {TranslationModule} from '../translation/translation.module';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +31,10 @@ import {TranslationModule} from '../translation/translation.module';
     TranslationModule,
     ProductModule,
     CartModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class LayoutModule {
