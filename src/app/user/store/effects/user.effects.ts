@@ -36,7 +36,9 @@ export class UserEffects {
         ofType(UserActions.loginSuccess),
         tap((data) => {
           localStorage.setItem('token', data.payload.jwt);
-          this.snackBar.open(this.translateService.instant('message.login.success'));
+          this.snackBar.open(this.translateService.instant('message.login.success'), 'X', {
+            duration: 3000
+          });
         })
       );
     }, {dispatch: false}
@@ -46,7 +48,9 @@ export class UserEffects {
       return this.actions$.pipe(
         ofType(UserActions.loginFailure),
         tap((data) => {
-          this.snackBar.open(this.translateService.instant('message.login.failure'));
+          this.snackBar.open(this.translateService.instant('message.login.failure'), 'X', {
+            duration: 3000
+          });
         })
       );
     }, {dispatch: false}
@@ -70,7 +74,9 @@ export class UserEffects {
       return this.actions$.pipe(
         ofType(UserActions.signUpSuccess),
         tap((data) => {
-          this.snackBar.open(this.translateService.instant('message.signup.success'));
+          this.snackBar.open(this.translateService.instant('message.signup.success'), 'X', {
+            duration: 3000
+          });
         })
       );
     }, {dispatch: false}
@@ -80,7 +86,9 @@ export class UserEffects {
       return this.actions$.pipe(
         ofType(UserActions.signUpFailure),
         tap((data) => {
-          this.snackBar.open(this.translateService.instant('message.signup.failure'));
+          this.snackBar.open(this.translateService.instant('message.signup.failure'), 'X', {
+            duration: 3000
+          });
         })
       );
     }, {dispatch: false}
@@ -89,7 +97,12 @@ export class UserEffects {
   logout$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(UserActions.logout),
-      tap(() => localStorage.removeItem('token'))
+      tap(() => {
+        localStorage.removeItem('token');
+        this.snackBar.open(this.translateService.instant('message.signup.failure'), 'X', {
+          duration: 3000
+        });
+      })
     );
   }, {dispatch: false});
 }

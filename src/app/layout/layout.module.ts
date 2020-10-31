@@ -13,10 +13,19 @@ import {AppRoutingModule} from '../app-routing.module';
 import {TranslationModule} from '../translation/translation.module';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AutoplayCarouselComponent} from './autoplay-carousel/autoplay-carousel.component';
+import {CarouselModule} from 'primeng/carousel';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, HomeComponent, ToolbarComponent, NavSidebarComponent, CarouselComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    ToolbarComponent,
+    NavSidebarComponent,
+    CarouselComponent,
+    AutoplayCarouselComponent],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -34,7 +43,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppRoutingModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CarouselModule
   ]
 })
 export class LayoutModule {

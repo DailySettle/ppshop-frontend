@@ -1,0 +1,10 @@
+<p-carousel [value]="products$ | async" [autoplayInterval]="5000" [circular]="true"
+            [numVisible]="3"
+            [numScroll]="1">
+  <p-header class="text-center">
+    <h5>今日特卖</h5>
+  </p-header>
+  <ng-template let-product pTemplate="item">
+    <pps-product-item [productItem]="product"></pps-product-item>
+  </ng-template>
+</p-carousel>

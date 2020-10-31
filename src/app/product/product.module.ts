@@ -14,9 +14,10 @@ import {AppRoutingModule} from '../app-routing.module';
 
 @NgModule({
   declarations: [ProductListComponent, ProductItemComponent, ProductDetailComponent],
-  exports: [
-    ProductListComponent
-  ],
+    exports: [
+        ProductListComponent,
+        ProductItemComponent
+    ],
   imports: [
     CommonModule,
     StoreModule.forFeature(fromProduct.productFeatureKey, fromProduct.reducer),
