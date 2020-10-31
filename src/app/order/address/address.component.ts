@@ -3,6 +3,9 @@ import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {TranslateService} from '@ngx-translate/core';
+import {stepsSaveAddress} from '../store/actions/order.actions';
+import {AddressModel} from '../model/address.model';
+import {selectOrderAddress} from '../store/selectors/order.selectors';
 
 @Component({
   selector: 'pps-address',
@@ -14,16 +17,21 @@ export class AddressComponent implements OnInit {
 
   constructor(private builder: FormBuilder,
               private router: Router,
-              private translate: TranslateService) {
+              private translate: TranslateService,
+              private store: Store) {
   }
 
   ngOnInit(): void {
     this.buildForm();
+    this.store.select(selectOrderAddress).subscribe(
+      address => this.addressForm.patchValue(address)
+    );
   }
 
   nextPage(): void {
     if (this.addressForm.valid) {
-      console.log(this.addressForm.value);
+      const address = new AddressModel(this.addressForm.value);
+      this.store.dispatch(stepsSaveAddress({address}));
       this.router.navigate(['checkout', 'payment']);
     }
   }
@@ -39,7 +47,7 @@ export class AddressComponent implements OnInit {
     });
   }
 
-  getTooltip(): void {
+  getTooltip(): string {
     return this.translate.instant('address.tooltip');
   }
 }

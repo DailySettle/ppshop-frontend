@@ -86,7 +86,7 @@
            [matTooltip]="!addressForm.valid ? getTooltip():''"
            matTooltipPosition="right"
            [matTooltipHideDelay]="2000">
-        <p-button label="Next" [disabled]="!addressForm.valid" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
+        <p-button label="{{'steps.button.next' | translate}}" [disabled]="!addressForm.valid" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
       </div>
     </div>
     <div class="col-1">

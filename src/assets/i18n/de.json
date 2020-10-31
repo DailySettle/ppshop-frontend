@@ -77,10 +77,10 @@
 			"cvv": "cvv",
 			"date": "Date",
 			"error": {
-        "cvv": "Please provide cvv",
-        "date": "Please provide date",
-        "number": "Please provide number",
-        "owner": "Please provide owner"
+				"cvv": "Please provide cvv",
+				"date": "Please provide date",
+				"number": "Please provide number",
+				"owner": "Please provide owner"
 			},
 			"number": "Number",
 			"owner": "Owner"
@@ -98,6 +98,8 @@
 		"logo": "PangPang Online-Shop",
 		"search": "Suche"
 	},
+	"instock": "INSTOCK",
+	"lowstock": "LOWSTOCK",
 	"message": {
 		"login": {
 			"failure": "Leider können Sie nicht einloggen！",
@@ -108,6 +110,7 @@
 			"success": "Erfolgreich registriert！"
 		}
 	},
+	"outofstock": "OUTOFSTOCK",
 	"payment": {
 		"tooltip": "Please fulfill the form!"
 	},
@@ -132,6 +135,13 @@
 		"reset": "Zurücksetzen",
 		"veges": "Gemüse"
 	},
+	"steps": {
+		"button": {
+      "back": "Back",
+      "next": "Next",
+      "submit": "Submit"
+		}
+	},
 	"toolbar": {
 		"cart": "Warenkorb",
 		"category": "Kategorien",
@@ -146,8 +156,5 @@
 		"price": "Price",
 		"rating": "Rate",
 		"title": "Your wishlist has {{number}} products"
-	},
-  "instock": "INSTOCK",
-  "lowstock": "LOWSTOCK",
-  "outofstock": "OUTOFSTOCK"
+	}
 }

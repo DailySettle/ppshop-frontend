@@ -98,6 +98,8 @@
 		"logo": "胖胖-网店",
 		"search": "查找"
 	},
+	"instock": "充足库存",
+	"lowstock": "少量库存",
 	"message": {
 		"login": {
 			"failure": "登录失败！",
@@ -108,6 +110,7 @@
 			"success": "注册成功！"
 		}
 	},
+	"outofstock": "没有库存",
 	"payment": {
 		"tooltip": "请填写以上信息"
 	},
@@ -132,6 +135,13 @@
 		"reset": "撤销分类",
 		"veges": "蔬菜"
 	},
+	"steps": {
+		"button": {
+			"back": "上一步",
+			"next": "下一步",
+			"submit": "提交"
+		}
+	},
 	"toolbar": {
 		"cart": "购物车",
 		"category": "全部商品",
@@ -146,8 +156,5 @@
 		"price": "价格",
 		"rating": "评分",
 		"title": "愿望单里共有{{number}}种商品。"
-	},
-  "instock": "充足库存",
-  "lowstock": "少量库存",
-  "outofstock": "没有库存"
+	}
 }

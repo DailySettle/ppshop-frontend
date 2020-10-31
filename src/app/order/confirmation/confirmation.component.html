@@ -4,59 +4,63 @@
     </div>
 
     <div class="col-10">
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.address.firstname'| translate}}</label>
-        <b>Seat</b>
+      <div *ngIf="address$ | async as address">
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.address.firstname'| translate}}</label>
+          <b>{{address.firstname}}</b>
+        </div>
+
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.address.lastname'| translate}}</label>
+          <b>{{address.lastname}}</b>
+        </div>
+
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.address.postcode'| translate}}</label>
+          <b>{{address.postcode}}</b>
+        </div>
+
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.address.city'| translate}}</label>
+          <b>{{address.city}}</b>
+        </div>
+
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.address.street'| translate}}</label>
+          <b>{{address.street}}</b>
+        </div>
+
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.address.number'| translate}}</label>
+          <b>{{address.number}}</b>
+        </div>
       </div>
 
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.address.lastname'| translate}}</label>
-        <b>Seat</b>
-      </div>
+      <div *ngIf="payment$ | async as payment">
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.payment.number'| translate}}</label>
+          <b>{{payment.number}}</b>
+        </div>
 
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.address.postcode'| translate}}</label>
-        <b>Seat</b>
-      </div>
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.payment.owner'| translate}}</label>
+          <b>{{payment.owner}}</b>
+        </div>
 
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.address.city'| translate}}</label>
-        <b>Seat</b>
-      </div>
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.payment.date'| translate}}</label>
+          <b>{{payment.date}}</b>
+        </div>
 
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.address.street'| translate}}</label>
-        <b>Seat</b>
-      </div>
-
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.address.number'| translate}}</label>
-        <b>Seat</b>
-      </div>
-
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.payment.number'| translate}}</label>
-        <b>Seat</b>
-      </div>
-
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.payment.owner'| translate}}</label>
-        <b>Seat</b>
-      </div>
-
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.payment.date'| translate}}</label>
-        <b>Seat</b>
-      </div>
-
-      <div class="p-field p-col-12 mb-3">
-        <label>{{'form.payment.cvv'| translate}}</label>
-        <b>Seat</b>
+        <div class="p-field p-col-12 mb-3">
+          <label>{{'form.payment.cvv'| translate}}</label>
+          <b>{{payment.cvv}}</b>
+        </div>
       </div>
 
       <div class="row justify-content-between">
-        <p-button label="Back" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
-        <p-button label="Next" (onClick)="complete()" icon="pi pi-angle-right"
+        <p-button label="{{'steps.button.back' | translate}}" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
+        <p-button label="{{'steps.button.submit' | translate}}" (onClick)="complete()" icon="pi pi-angle-right"
                   iconPos="right"></p-button>
       </div>
     </div>
