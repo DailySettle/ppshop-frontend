@@ -102,11 +102,11 @@
 	"lowstock": "LOWSTOCK",
 	"message": {
 		"login": {
-			"failure": "Leider können Sie nicht einloggen！",
 			"success": "Erfolgreich eingeloggt！"
 		},
 		"signup": {
 			"failure": "Fehler!",
+			"hasExisted": "User email has existed!",
 			"success": "Erfolgreich registriert！"
 		}
 	},
@@ -137,9 +137,9 @@
 	},
 	"steps": {
 		"button": {
-      "back": "Back",
-      "next": "Next",
-      "submit": "Submit"
+			"back": "Back",
+			"next": "Next",
+			"submit": "Submit"
 		}
 	},
 	"toolbar": {

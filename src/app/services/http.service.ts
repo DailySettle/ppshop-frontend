@@ -14,9 +14,9 @@ export class HttpService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllProducts(): Observable<Product[]> {
-    const url = `${this.BASE_URL}/product`;
-    return this.httpClient.get<Product[]>(url);
+  getAllProducts(): Observable<any> {
+    const url = `${this.BASE_URL}/product/all`;
+    return this.httpClient.get<any>(url);
   }
 
   login(user: User): Observable<any> {

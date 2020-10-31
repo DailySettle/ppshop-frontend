@@ -27,14 +27,18 @@ export class ProductEffects {
     return this.actions$.pipe(
       ofType(ProductActions.loadAllProducts),
       concatMap(() => this.http.getAllProducts().pipe(
-        map(products => products.map(product => {
-          product.inventoryStatus = calculateQuantity(product.quantity);
-          return product;
-        })),
-        map(products => ProductActions.loadAllProductsSuccess({products})),
-        catchError(error => of(ProductActions.loadAllProductsFailure({errorMessage: error.error}))))
-      )
-    );
+        map(response => {
+          if (response.flag) {
+            const products = response.data.map(product => {
+              product.inventoryStatus = calculateQuantity(product.quantity);
+              return product;
+            });
+            return ProductActions.loadAllProductsSuccess({products});
+          } else {
+            return ProductActions.loadAllProductsFailure({errorMessage: response.message});
+          }
+        })
+        )
+      ));
   });
-
 }

@@ -102,11 +102,11 @@
 	"lowstock": "LOWSTOCK",
 	"message": {
 		"login": {
-			"failure": "You aren't able to login",
 			"success": "Login successfully"
 		},
 		"signup": {
 			"failure": "Signup failure",
+			"hasExisted": "User email has existed!",
 			"success": "Signup success"
 		}
 	},

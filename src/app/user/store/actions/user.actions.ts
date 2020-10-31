@@ -23,7 +23,7 @@ export const signUp = createAction(
 
 export const signUpSuccess = createAction(
   '[User] Signup User Success',
-  props<{ payload: any }>()
+  props<{ message: string }>()
 );
 
 export const signUpFailure = createAction(

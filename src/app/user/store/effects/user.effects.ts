@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
-import {catchError, map, concatMap, tap} from 'rxjs/operators';
-import {EMPTY, of} from 'rxjs';
+import {catchError, concatMap, map, switchMap, tap} from 'rxjs/operators';
+import {of} from 'rxjs';
 
 import * as UserActions from '../actions/user.actions';
 import {HttpService} from '../../../services/http.service';
-import {Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {TranslateService} from '@ngx-translate/core';
 
@@ -23,12 +22,17 @@ export class UserEffects {
   login$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(UserActions.login),
-      concatMap((action) => this.http.login(action.user)
+      switchMap((action) => this.http.login(action.user)
         .pipe(
-          map(payload => UserActions.loginSuccess({payload})),
-          catchError(error => of(UserActions.loginFailure({errorMessage: error.error}))))
-      )
-    );
+          map(response => {
+            if (response.flag) {
+              return UserActions.loginSuccess({payload: response.data});
+            } else {
+              return UserActions.loginFailure({errorMessage: response.message});
+            }
+          }),
+        )
+      ));
   });
 
   loginSuccess$ = createEffect(() => {
@@ -47,8 +51,8 @@ export class UserEffects {
   loginFailure$ = createEffect(() => {
       return this.actions$.pipe(
         ofType(UserActions.loginFailure),
-        tap((data) => {
-          this.snackBar.open(this.translateService.instant('message.login.failure'), 'X', {
+        tap((response) => {
+          this.snackBar.open(this.translateService.instant('message.signup.failure'), 'X', {
             duration: 3000
           });
         })
@@ -61,13 +65,14 @@ export class UserEffects {
       ofType(UserActions.signUp),
       concatMap((action) => this.http.signUp(action.user)
         .pipe(
-          map(payload => {
-            console.log(payload);
-            return UserActions.signUpSuccess({payload});
+          map(response => {
+            if (response.flag) {
+              return UserActions.signUpSuccess({message: response.message});
+            } else {
+              return UserActions.signUpFailure({errorMessage: response.message});
+            }
           }),
-          catchError(error => of(UserActions.signUpFailure({errorMessage: error.error}))))
-      )
-    );
+        )));
   });
 
   signupSuccess$ = createEffect(() => {
@@ -85,7 +90,7 @@ export class UserEffects {
   signupFailure$ = createEffect(() => {
       return this.actions$.pipe(
         ofType(UserActions.signUpFailure),
-        tap((data) => {
+        tap((response) => {
           this.snackBar.open(this.translateService.instant('message.signup.failure'), 'X', {
             duration: 3000
           });
@@ -99,7 +104,7 @@ export class UserEffects {
       ofType(UserActions.logout),
       tap(() => {
         localStorage.removeItem('token');
-        this.snackBar.open(this.translateService.instant('message.signup.failure'), 'X', {
+        this.snackBar.open(this.translateService.instant('message.signup.hasExisted'), 'X', {
           duration: 3000
         });
       })
