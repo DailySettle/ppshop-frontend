@@ -11,6 +11,7 @@ import {FormControl} from '@angular/forms';
 import {map, startWith} from 'rxjs/operators';
 import {Product} from '../../product/model/product.model';
 import {selectAllProduct} from '../../product/store/selectors/product.selectors';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'pps-header',
@@ -28,7 +29,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(private translate: TranslateService,
               public dialog: MatDialog,
-              private store: Store) {
+              private store: Store,
+              private router: Router) {
     this.auth$ = this.store.select(selectAuth);
     this.products$ = this.store.select(selectAllProduct);
   }
@@ -74,5 +76,9 @@ export class HeaderComponent implements OnInit {
     const filterValue = value.toLowerCase();
 
     return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
+  }
+
+  search(): void {
+    this.router.navigate(['product', this.productFormControl.value]);
   }
 }

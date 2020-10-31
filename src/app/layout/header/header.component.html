@@ -15,7 +15,7 @@
             [ngStyle]="{'color' : lang===Language.EN ? 'blue' : 'inherit' }">EN
     </button>
   </mat-menu>
-  <form class="form-inline my-2 my-lg-0 mr-md-auto">
+  <form class="form-inline my-2 my-lg-0 mr-md-auto" (ngSubmit)="search()">
     <input class="form-control mr-sm-2" type="search" placeholder="{{'header.search' | translate}}" aria-label="Search"
            [matAutocomplete]="auto" matInput [formControl]="productFormControl">
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn.bind(this)">
