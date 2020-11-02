@@ -1,8 +1,6 @@
 <div class="container-lg mt-3">
   <div class="row">
-    <div class="col-1">
-    </div>
-    <div class="col-10">
+    <div class="col-10 offset-1">
       <form [formGroup]="addressForm">
         <div class="row">
           <div class="col-md-6 mb-3">
@@ -86,10 +84,9 @@
            [matTooltip]="!addressForm.valid ? getTooltip():''"
            matTooltipPosition="right"
            [matTooltipHideDelay]="2000">
-        <p-button label="{{'steps.button.next' | translate}}" [disabled]="!addressForm.valid" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
+        <p-button label="{{'steps.button.next' | translate}}" [disabled]="!addressForm.valid" (onClick)="nextPage()"
+                  icon="pi pi-angle-right" iconPos="right"></p-button>
       </div>
-    </div>
-    <div class="col-1">
     </div>
   </div>
 </div>

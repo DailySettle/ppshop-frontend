@@ -1,9 +1,6 @@
-<div class="container-lg mt-3">
+<div class="container mt-3">
   <div class="row">
-    <div class="col-1">
-    </div>
-
-    <div class="col-10">
+    <div class="col-10 offset-1">
       <div *ngIf="address$ | async as address">
         <div class="p-field p-col-12 mb-3">
           <label>{{'form.address.firstname'| translate}}</label>
@@ -63,8 +60,6 @@
         <p-button label="{{'steps.button.submit' | translate}}" (onClick)="complete()" icon="pi pi-angle-right"
                   iconPos="right"></p-button>
       </div>
-    </div>
-    <div class="col-1">
     </div>
   </div>
 </div>

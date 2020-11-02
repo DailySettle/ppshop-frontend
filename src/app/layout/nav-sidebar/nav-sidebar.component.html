@@ -1,6 +1,6 @@
 <div class="side-menu" *ngIf="showSidebar">
   <ul class="nav navbar-nav">
-    <li [ngClass]="selectedType === CategoryType.FASTFOOD?'selected':''" (click)="select(CategoryType.FASTFOOD)">
+    <li [ngClass]="selectedType === CategoryType.FAST_FOOD?'selected':''" (click)="select(CategoryType.FAST_FOOD)">
       <a>
         <span class="icon fas fa-pizza-slice"></span>
         <span class="title">{{'sidebar.fastfood' | translate}}</span>
