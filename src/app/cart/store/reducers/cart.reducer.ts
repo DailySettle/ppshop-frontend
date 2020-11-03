@@ -18,15 +18,21 @@ export const reducer = createReducer(
   initialState,
 
   on(CartActions.addToCarts, (state, {product}) => {
-    const newCart = _.cloneDeep(state.cart);
-    if (newCart.find(productInCart => productInCart.product.id === product.id)) {
+    const oldCart = _.cloneDeep(state.cart);
+    if (oldCart.find(productInCart => productInCart.product.id === product.id)) {
       return ({...state});
     } else {
-      newCart.push(new CartItem(product, 1));
+      const newCart = oldCart.concat(new CartItem(product, 1));
       return ({...state, cart: newCart});
     }
   }),
-  on(CartActions.removeFromCarts, (state) => state),
+
+  on(CartActions.removeFromCarts, (state, {cartItem}) => {
+    const oldCart = _.cloneDeep(state.cart);
+    const newCart = oldCart.filter(item => item.product.id !== cartItem.product.id);
+    return ({...state, cart: newCart});
+  }),
+
   on(CartActions.changeQtyInCarts, ((state, {product, qty}) => {
     const oldCart = _.cloneDeep(state.cart);
     const updateProduct = oldCart.find(cartItem => cartItem.product.id === product.id);

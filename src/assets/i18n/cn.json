@@ -127,6 +127,7 @@
 		"price": "价格",
 		"quantity": "数量",
 		"title": "购物车里共有{{number}}种商品。",
+		"total": "总价",
 		"totalPrice": "总计"
 	},
 	"sidebar": {

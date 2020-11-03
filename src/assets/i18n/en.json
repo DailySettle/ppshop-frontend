@@ -127,6 +127,7 @@
 		"price": "Price",
 		"quantity": "Quantity",
 		"title": "Your cart has {{number}} products",
+		"total": "",
 		"totalPrice": "Total price"
 	},
 	"sidebar": {

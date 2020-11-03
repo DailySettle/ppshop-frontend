@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {selectAllItemsInCart, selectNumberOfItemInCart} from '../store/selectors/cart.selectors';
 import {CartItem} from '../model/cart-item.model';
-import {changeQtyInCarts} from '../store/actions/cart.actions';
+import {changeQtyInCarts, removeFromCarts} from '../store/actions/cart.actions';
 import {Product} from '../../product/model/product.model';
 import {TranslateService} from '@ngx-translate/core';
 
@@ -46,5 +46,13 @@ export class ShoppingCartComponent implements OnInit {
 
   getTooltip(): string {
     return this.translate.instant('checkout.tooltip');
+  }
+
+  remove(cartItem: CartItem): void {
+    this.store.dispatch(removeFromCarts({cartItem}));
+  }
+
+  getTotal(cartItem: CartItem): number {
+    return cartItem.product.price * cartItem.qty;
   }
 }

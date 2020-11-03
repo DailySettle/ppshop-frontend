@@ -11,6 +11,8 @@ import {ButtonModule} from 'primeng/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AppRoutingModule} from '../app-routing.module';
 import {TranslationModule} from '../translation/translation.module';
+import {ReactiveComponentModule} from '@ngrx/component';
+import {ShareModule} from '../share/share.module';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import {TranslationModule} from '../translation/translation.module';
     TranslationModule,
     ButtonModule,
     AppRoutingModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ReactiveComponentModule,
+    ShareModule
   ]
 })
 export class CartModule {

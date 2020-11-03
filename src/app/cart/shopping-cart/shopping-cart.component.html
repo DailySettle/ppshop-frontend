@@ -1,43 +1,52 @@
-<div class="container-lg">
-  <div class="row" *ngIf="cartItems$ | async as cartItems">
-    <p-table [value]="cartItems">
-      <ng-template pTemplate="caption">
-        <div class="p-d-flex p-ai-center p-jc-between">
-          {{'shopping-cart.title' | translate: param}}
-        </div>
-      </ng-template>
-      <ng-template pTemplate="header">
-        <tr>
-          <th>{{'shopping-cart.name' | translate}}</th>
-          <th>{{'shopping-cart.image' | translate}}</th>
-          <th>{{'shopping-cart.price' | translate}}</th>
-          <th>{{'shopping-cart.quantity' | translate}}</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-cartItem>
-        <tr>
-          <td>{{cartItem.product.name}}</td>
-          <td><img [src]="cartItem.product.imageUrl" [alt]="cartItem.product.name" width="100" class="p-shadow-4"/></td>
-          <td>{{cartItem.product.price | currency:'EUR'}}</td>
-          <td class="my-auto">
-            <span class="icon fas fa-plus pr-1 cursor" (click)="qtyIncrease(cartItem.product)"></span>
-            {{cartItem.qty}}
-            <span class="icon fas fa-minus pl-1 cursor" (click)="qtyDecrease(cartItem.product)"></span>
-          </td>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="summary">
-        <div class="py-3">
-          {{'shopping-cart.totalPrice' | translate}}: {{totalPrice | currency:'EUR'}}
-          <div class="float-right"
-               [matTooltip]="cartItems.length == 0 ? getTooltip():''"
-               [matTooltipHideDelay]="2000">
-            <button class="btn btn-primary" [disabled]="cartItems.length == 0" [routerLink]="['/checkout','address']">
-              {{ "checkout.button" | translate}}
-            </button>
+<div class="container">
+  <div class="row">
+    <ng-container *ngrxLet="cartItems$ as cartItems">
+      <p-table [value]="cartItems">
+        <ng-template pTemplate="caption">
+          <div>
+            {{'shopping-cart.title' | translate: param}}
           </div>
-        </div>
-      </ng-template>
-    </p-table>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>{{'shopping-cart.name' | translate}}</th>
+            <th>{{'shopping-cart.image' | translate}}</th>
+            <th>{{'shopping-cart.price' | translate}}</th>
+            <th>{{'shopping-cart.quantity' | translate}}</th>
+            <th>{{'shopping-cart.total' | translate}}</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-cartItem>
+          <tr>
+            <td>{{cartItem.product.name}}</td>
+            <td><img [src]="cartItem.product.imageUrl" [alt]="cartItem.product.name" width="100"/></td>
+            <td>{{cartItem.product.price | currency:'EUR'}}</td>
+            <td class="my-auto">
+              <span class="icon fas fa-plus pr-1 cursor" (click)="qtyIncrease(cartItem.product)"></span>
+              {{cartItem.qty}}
+              <span class="icon fas fa-minus pl-1 cursor" (click)="qtyDecrease(cartItem.product)"></span>
+            </td>
+            <td>
+              {{ getTotal(cartItem) | currency:'EUR'}}
+              <button mat-icon-button (click)="remove(cartItem)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+          <div class="py-3">
+            {{'shopping-cart.totalPrice' | translate}}: {{totalPrice | currency:'EUR'}}
+            <div class="float-right"
+                 [matTooltip]="cartItems.length == 0 ? getTooltip():''"
+                 [matTooltipHideDelay]="2000">
+              <button class="btn btn-primary" [disabled]="cartItems.length == 0" [routerLink]="['/checkout','address']">
+                {{ "checkout.button" | translate}}
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </p-table>
+    </ng-container>
   </div>
 </div>
