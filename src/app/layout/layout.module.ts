@@ -7,7 +7,6 @@ import {ShareModule} from '../share/share.module';
 import {ProductModule} from '../product/product.module';
 import {CartModule} from '../cart/cart.module';
 import {ToolbarComponent} from './toolbar/toolbar.component';
-import {NavSidebarComponent} from './nav-sidebar/nav-sidebar.component';
 import {CarouselComponent} from './carousel/carousel.component';
 import {AppRoutingModule} from '../app-routing.module';
 import {TranslationModule} from '../translation/translation.module';
@@ -15,6 +14,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AutoplayCarouselComponent} from './autoplay-carousel/autoplay-carousel.component';
 import {CarouselModule} from 'primeng/carousel';
+import {SideNavComponent} from './side-nav/side-nav.component';
+import {MegaMenuModule} from 'primeng/megamenu';
+import {ButtonModule} from 'primeng/button';
 
 
 @NgModule({
@@ -23,16 +25,17 @@ import {CarouselModule} from 'primeng/carousel';
     FooterComponent,
     HomeComponent,
     ToolbarComponent,
-    NavSidebarComponent,
     CarouselComponent,
-    AutoplayCarouselComponent],
+    AutoplayCarouselComponent,
+    SideNavComponent
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
     ToolbarComponent,
-    NavSidebarComponent,
-    CarouselComponent
+    CarouselComponent,
+    SideNavComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +47,9 @@ import {CarouselModule} from 'primeng/carousel';
     MatAutocompleteModule,
     ReactiveFormsModule,
     FormsModule,
-    CarouselModule
+    CarouselModule,
+    MegaMenuModule,
+    ButtonModule
   ]
 })
 export class LayoutModule {

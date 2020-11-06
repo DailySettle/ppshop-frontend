@@ -1,16 +1,20 @@
 <div class="container">
   <div class="row justify-content-center">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button type="button" class="btn btn-primary active">特别分类1</button>
-      <button type="button" class="btn btn-primary">特别分类2</button>
-      <button type="button" class="btn btn-primary">特别分类3</button>
-      <button type="button" class="btn btn-primary">特别分类4</button>
-      <button type="button" class="btn btn-primary">特别分类5</button>
-      <button type="button" class="btn btn-primary">特别分类6</button>
-      <button type="button" class="btn btn-primary">特别分类7</button>
-      <button type="button" class="btn btn-primary">特别分类8</button>
-      <button type="button" class="btn btn-primary">特别分类9</button>
-      <button type="button" class="btn btn-primary">特别分类10</button>
+      <button type="button" class="btn btn-primary" (click)="showAllProducts()" [ngClass]="selectedTab ===ProductGroup.ALL?'active':''">全部商品</button>
+      <button type="button" class="btn btn-primary" (click)="showNewProducts()" [ngClass]="selectedTab ===ProductGroup.NEW?'active':''">新进商品</button>
+      <button type="button" class="btn btn-primary">常用调料</button>
+      <button type="button" class="btn btn-primary">方便速食</button>
+      <button type="button" class="btn btn-primary">主食杂粮</button>
+      <button type="button" class="btn btn-primary">干货食材</button>
+      <button type="button" class="btn btn-primary">饮料冲饮</button>
+      <button type="button" class="btn btn-primary">热卖零食</button>
+      <button type="button" class="btn btn-primary">家电</button>
+      <button type="button" class="btn btn-primary">双11</button>
+      <button type="button" class="btn btn-primary">生鲜</button>
+      <button type="button" class="btn btn-primary">卤味</button>
+      <button type="button" class="btn btn-primary">月饼</button>
+      <button type="button" class="btn btn-primary" (click)="showDiscountedProducts()" [ngClass]="selectedTab ===ProductGroup.SALE?'active':''">限时特卖</button>
     </nav>
   </div>
 </div>

@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {selectNumberOfItemInCart} from '../../cart/store/selectors/cart.selectors';
-import {Observable} from 'rxjs';
-import {selectNumberOfProductInWishlist} from '../../wishlist/store/selectors/wish.selectors';
+import {ProductGroup} from '../../product/model/product-group.enum';
 import {selectProductGroup} from '../../product/store/actions/product.actions';
 
 @Component({
@@ -11,6 +9,8 @@ import {selectProductGroup} from '../../product/store/actions/product.actions';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
+  selectedTab: ProductGroup = ProductGroup.ALL;
+  ProductGroup = ProductGroup;
 
   constructor(private store: Store) {
 
@@ -20,4 +20,18 @@ export class ToolbarComponent implements OnInit {
 
   }
 
+  showAllProducts(): void {
+    this.selectedTab = ProductGroup.ALL;
+    this.store.dispatch(selectProductGroup({selectGroup: ProductGroup.ALL}));
+  }
+
+  showNewProducts(): void {
+    this.selectedTab = ProductGroup.NEW;
+    this.store.dispatch(selectProductGroup({selectGroup: ProductGroup.NEW}));
+  }
+
+  showDiscountedProducts(): void {
+    this.selectedTab = ProductGroup.SALE;
+    this.store.dispatch(selectProductGroup({selectGroup: ProductGroup.SALE}));
+  }
 }
