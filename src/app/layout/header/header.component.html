@@ -25,11 +25,16 @@
     </mat-autocomplete>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{'header.search' | translate}}</button>
   </form>
-  <nav class="my-2">
-    <a class="p-2 text-dark" routerLink="/home">{{'header.link.product' | translate}}</a>
-    <a class="p-2 text-dark" href="#">{{'header.link.service' | translate}}</a>
-    <a class="p-2 text-dark" href="#">{{'header.link.consult' | translate}}</a>
-  </nav>
+  <span class="cursor pr-4" aria-label="Example icon-button with favorite icon" style="color: #007bff"
+        routerLink="/wishlist">
+    {{'toolbar.wishlist' |translate}}
+    <mat-icon color="primary" [matBadge]="numberOfItemsInWishlist | async" matBadgeColor="warn">favorite</mat-icon>
+  </span>
+  <span class="cursor pr-4" aria-label="Example icon-button with shopping_cart icon" style="color: #007bff"
+        routerLink="/shopping-cart">
+    {{'toolbar.cart' |translate}}
+    <mat-icon color="primary" [matBadge]="numberOfItemsInCart | async" matBadgeColor="warn">shopping_cart</mat-icon>
+  </span>
   <a *ngIf="!(auth$ | async)" class="ml-2 btn btn-outline-primary mr-2"
      (click)="openLoginDialog()">{{'header.button.login' | translate}}</a>
   <button *ngIf="auth$ | async" mat-icon-button [mat-menu-trigger-for]="profileMenu">

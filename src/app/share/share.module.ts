@@ -30,7 +30,8 @@ const share = [
   MatFormFieldModule,
   MatRadioModule,
   MatSelectModule,
-  MatInputModule
+  MatInputModule,
+  MatTabsModule
 ];
 
 @NgModule({
