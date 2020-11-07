@@ -1,2 +1,15 @@
-<p-megaMenu [model]="items" orientation="vertical">
-</p-megaMenu>
+<div class="container">
+  <div class="row">
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip *ngFor="let selectedItem of selectedItems" selectable
+                (removed)="remove(selectedItem)">
+        {{selectedItem}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <div class="row mt-2">
+    <p-megaMenu [model]="items" orientation="vertical">
+    </p-megaMenu>
+  </div>
+</div>

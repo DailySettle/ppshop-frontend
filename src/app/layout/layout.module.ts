@@ -17,6 +17,7 @@ import {CarouselModule} from 'primeng/carousel';
 import {SideNavComponent} from './side-nav/side-nav.component';
 import {MegaMenuModule} from 'primeng/megamenu';
 import {ButtonModule} from 'primeng/button';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import {ButtonModule} from 'primeng/button';
     FormsModule,
     CarouselModule,
     MegaMenuModule,
-    ButtonModule
+    ButtonModule,
+    MatChipsModule
   ]
 })
 export class LayoutModule {

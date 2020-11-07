@@ -12,6 +12,7 @@ import {selectProductType} from '../../product/store/actions/product.actions';
 export class SideNavComponent implements OnInit {
   items: MegaMenuItem[];
   CategoryType = CategoryType;
+  selectedItems = [];
 
   constructor(private store: Store) {
   }
@@ -25,7 +26,13 @@ export class SideNavComponent implements OnInit {
             {
               label: '蔬菜水果',
               items: [
-                {label: '蔬菜', command: () => this.store.dispatch(selectProductType({selectType: CategoryType.VEGES}))},
+                {
+                  label: '蔬菜', command: () => {
+                    this.store.dispatch(selectProductType({selectType: CategoryType.VEGES}));
+                    this.selectedItems.push('蔬菜');
+                    console.log(this.selectedItems);
+                  }
+                },
                 {label: '水果'}]
             },
             {
@@ -110,5 +117,11 @@ export class SideNavComponent implements OnInit {
         ]
       }
     ];
+  }
+
+  remove(selectedItem: string): void {
+    const index = this.selectedItems.findIndex(item => item === selectedItem);
+    this.selectedItems.splice(index, 1);
+    this.store.dispatch(selectProductType({selectType: null}));
   }
 }
