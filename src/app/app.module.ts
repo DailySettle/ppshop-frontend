@@ -16,6 +16,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {TranslationModule} from './translation/translation.module';
 import {WishlistModule} from './wishlist/wishlist.module';
+import {routerReducer, RouterState, StoreRouterConnectingModule} from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -33,9 +34,19 @@ import {WishlistModule} from './wishlist/wishlist.module';
     CartModule,
     OrderModule,
     WishlistModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(
+      {router: routerReducer},
+      {
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true,
+          strictStateSerializability: true,
+          strictActionSerializability: true
+        }
+      }),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreRouterConnectingModule.forRoot({stateKey: 'router', routerState: RouterState.Minimal}),
   ],
   providers: [],
   bootstrap: [AppComponent]

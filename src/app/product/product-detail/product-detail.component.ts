@@ -14,18 +14,12 @@ import {addToCarts} from '../../cart/store/actions/cart.actions';
 })
 export class ProductDetailComponent implements OnInit {
   product$: Observable<Product>;
-  selectedId: string;
 
-  constructor(private route: ActivatedRoute, private store: Store) {
+  constructor(private store: Store) {
   }
 
   ngOnInit(): void {
-    this.product$ = this.route.paramMap.pipe(
-      switchMap(params => {
-        this.selectedId = params.get('id');
-        return this.store.select(selectProductById, {id: this.selectedId});
-      })
-    );
+    this.product$ = this.store.select(selectProductById);
   }
 
   handleAddToCart(product: Product): void {

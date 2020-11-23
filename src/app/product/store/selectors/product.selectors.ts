@@ -1,10 +1,17 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 import * as fromProduct from '../reducers/product.reducer';
+import * as fromRouter from '@ngrx/router-store';
 import {ProductGroup} from '../../model/product-group.enum';
+
+export interface RouterState {
+  router: fromRouter.RouterReducerState<any>;
+}
 
 export const selectProductState = createFeatureSelector<fromProduct.ProductState>(
   fromProduct.productFeatureKey
 );
+
+export const selectRouterState = createFeatureSelector<RouterState, fromRouter.RouterReducerState<any>>('router');
 
 export const selectAllProduct = createSelector(
   selectProductState,
@@ -13,7 +20,11 @@ export const selectAllProduct = createSelector(
 
 export const selectProductById = createSelector(
   selectProductState,
-  (state, props) => state.products.find(product => product.id === props.id)
+  selectRouterState,
+  (state, router) => {
+    console.log(router);
+    return state.products.find(product => product.id === router.state.root.children[0].params.id);
+  }
 );
 
 export const selectType = createSelector(

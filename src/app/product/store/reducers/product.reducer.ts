@@ -5,6 +5,7 @@ import {CategoryType} from '../../model/category-type.enum';
 import {ProductGroup} from '../../model/product-group.enum';
 
 export const productFeatureKey = 'product';
+export const routerKey = 'routerReducer';
 
 export interface ProductState {
   products: Product[];
